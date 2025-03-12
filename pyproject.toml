@@ -1,0 +1,20 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+
+requires = [ "poetry-core" ]
+
+[tool.poetry]
+name = "chromesession"
+version = "0.0.0"
+description = ""
+authors = [ "Christoph Dörrer <d-chris@web.de>" ]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests-cache = "^1.2.1"
+responses = "^0.25.7"
+selenium = "^4.29.0"
+
+[tool.isort]
+profile = "black"
