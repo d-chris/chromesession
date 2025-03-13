@@ -1,3 +1,7 @@
+"""
+.. include:: ../README.md
+"""
+
 from .chromium import WebDriver, chrome
 from .session import CachedSession
 

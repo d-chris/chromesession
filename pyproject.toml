@@ -11,6 +11,10 @@ authors = [ "Christoph Dörrer <d-chris@web.de>" ]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.urls]
+repository = "https://github.com/d-chris/chromesession"
+documentation = "https://d-chris.github.io/chromesession"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 requests-cache = "^1.2.1"
@@ -23,6 +27,10 @@ driver = [ "chromedriver-py" ]
 
 [tool.poetry.group.dev.dependencies]
 beautifulsoup4 = "^4.13.3"
+
+[tool.poetry.group.docs.dependencies]
+pdoc = ">=14.0.0"
+pathlibutil = "^0.3.5"
 
 [tool.isort]
 profile = "black"
