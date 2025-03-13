@@ -10,6 +10,16 @@ description = "contextmanager for managing `selenium` chrome sessions with cachi
 authors = [ "Christoph Dörrer <d-chris@web.de>" ]
 license = "MIT"
 readme = "README.md"
+classifiers = [
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+keywords = [ "selenium", "requests-cache", "chromedriver-py", "responses" ]
 
 [tool.poetry.urls]
 repository = "https://github.com/d-chris/chromesession"

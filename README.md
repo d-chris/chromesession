@@ -1,5 +1,17 @@
 # chromesession
 
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/chromesession)](https://pypi.org/project/chromesession/)
+[![PyPI - Version](https://img.shields.io/pypi/v/chromesession)](https://pypi.org/project/chromesession/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/chromesession)](https://pypi.org/project/chromesession/)
+[![PyPI - License](https://img.shields.io/pypi/l/chromesession)](https://raw.githubusercontent.com/d-chris/chromesession/main/LICENSE)
+[![GitHub - Page](https://img.shields.io/website?url=https%3A%2F%2Fd-chris.github.io%2Fchromesession&up_message=pdoc&logo=github&label=documentation)](https://d-chris.github.io/chromesession)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://raw.githubusercontent.com/d-chris/chromesession/main/.pre-commit-config.yaml)
+<!-- [![GitHub - Pytest](https://img.shields.io/github/actions/workflow/status/d-chris/chromesession/pytest.yml?logo=github&label=pytest)](https://github.com/d-chris/chromesession/actions/workflows/pytest.yml) -->
+<!-- [![GitHub - Release](https://img.shields.io/github/v/tag/d-chris/chromesession?logo=github&label=github)](https://github.com/d-chris/chromesession) -->
+<!-- [![codecov](https://codecov.io/gh/d-chris/chromesession/graph/badge.svg?token=WY062DFVTR)](https://codecov.io/gh/d-chris/chromesession) -->
+
+---
+
 `chromesession` is a Python package that provides a convenient contextmanager for managing `selenium` chrome sessions.
 
 In addition, a `CachedSession` is provided to directly cache the driver responses.
@@ -10,7 +22,7 @@ In addition, a `CachedSession` is provided to directly cache the driver response
 pip install chromesession
 ```
 
-To use the `chromesession.chrome` contextmanager to use `selenium`, the chromedriver must be installed the system.
+To use the `chromesession.chrome` contextmanager to use `selenium`, the [chromedriver](https://googlechromelabs.github.io/chrome-for-testing/) must be installed the system.
 
 Alternatively, you can install the latest `chromedriver` as extra.
 
