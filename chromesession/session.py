@@ -79,7 +79,7 @@ class CachedSession(requests_cache.CachedSession):
         """
         self.cache.save_response(response, **kwargs)
 
-    def save_driver(self, driver: WebDriver, **kwargs) -> None:
+    def save_driver(self, driver: WebDriver, **kwargs) -> requests.Response:
         """Save a response generated from a WebDriver's page source to the cache.
 
         Args:
@@ -89,7 +89,29 @@ class CachedSession(requests_cache.CachedSession):
         response = self.response(driver)
         self.save_response(response, **kwargs)
 
-    def get(self, url: str, **kwargs) -> requests_cache.AnyResponse:  # type: ignore[override]
+        return response
+
+    def save(
+        self, response: Union[requests.Response, WebDriver], **kwargs
+    ) -> requests.Response:
+        """Save an HTTP or WebDriver response to the cache.
+
+        Args:
+            response (Union[requests.Response, WebDriver]): The HTTP response or
+                WebDriver instance to cache.
+            **kwargs: Additional keyword arguments.
+
+        Returns:
+            requests.Response: The cached HTTP response.
+        """
+
+        if isinstance(response, WebDriver):
+            return self.save_driver(response, **kwargs)
+
+        self.save_response(response, **kwargs)
+        return response
+
+    def get(self, url: str, **kwargs) -> requests_cache.AnyResponse:  # type: ignore[override] # noqa: E501
         """Perform a GET request with a normalized URL.
 
         Args:
@@ -122,14 +144,14 @@ class CachedSession(requests_cache.CachedSession):
         url = cls.normalize(driver.current_url)
         body = driver.page_source.encode(encoding)
 
-        # Step 2: Use responses to mock an HTTP GET request with Selenium HTML content as the body
+        # Step 1: Mock the request using the responses library
         with responses.RequestsMock() as r:
             r.add(
                 responses.GET,
-                url=url,  # Mocked URL
-                body=body,  # Use the HTML content from Selenium as the response body
+                url=url,
+                body=body,
                 status=200,
-                content_type=f"text/html; charset={encoding}",  # Set the appropriate content type
+                content_type=f"text/html; charset={encoding}",
             )
 
             # Step 3: Make the mocked request
