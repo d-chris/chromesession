@@ -1,9 +1,10 @@
 import os
+import platform
 import shutil
 from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -16,6 +17,24 @@ except ModuleNotFoundError:
     __chromedriver = None
 
 
+def find_chromedriver() -> Union[str, None]:
+    """Find the ChromeDriver executable in the system PATH.
+
+    This function determines the appropriate executable name based on the current
+    operating system and searches for it in the system PATH.
+
+    Returns:
+        str: The path to the ChromeDriver executable if found, otherwise None.
+    """
+
+    if platform.system() == "Windows":
+        driver = "chromedriver.exe"
+    else:
+        driver = "chromedriver"
+
+    return shutil.which(driver)
+
+
 def chromedriver() -> Path:
     """Get the path to the ChromeDriver executable.
 
@@ -25,15 +44,13 @@ def chromedriver() -> Path:
         Path: The path to the ChromeDriver executable.
     """
 
-    driver = "chromedriver.exe"
-
-    path = __chromedriver or shutil.which(driver)
+    path = __chromedriver or find_chromedriver()
 
     if path is None:
         raise RuntimeError(
             "\n".join(
                 (
-                    f"{driver=} could not be found in PATH.",
+                    "'chromedriver' could not be found in PATH.",
                     f"\tpip install {__package__}[driver]",
                 )
             )

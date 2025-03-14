@@ -60,6 +60,7 @@ def main() -> int:
                 "chromesession",
                 "requests",
                 "requests_cache.session",
+                "bs4",
                 "selenium",
                 "selenium.webdriver",
                 "selenium.webdriver.chromium.webdriver",

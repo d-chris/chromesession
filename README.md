@@ -24,10 +24,7 @@ pip install chromesession
 
 To use the `chromesession.chrome` contextmanager to use `selenium`, the [chromedriver](https://googlechromelabs.github.io/chrome-for-testing/) must be installed the system.
 
-Alternatively, you can install the latest `chromedriver` as extra.
-
-[![PyPI - eth-hash](https://img.shields.io/pypi/v/chromedriver-py?logo=pypi&logoColor=white&label=chromedriver-py)](https://pypi.org/project/chromedriver-py/)
-
+Alternatively, you can install the latest `chromedriver` as [extra](#extras).
 
 ```cmd
 pip install chromesession[driver]
@@ -71,5 +68,15 @@ if __name__ == "__main__":
 [![PyPI - requests-cache](https://img.shields.io/pypi/v/requests-cache?logo=pypi&logoColor=white&label=requests-cache)](https://pypi.org/project/requests-cache/)
 [![PyPI - responses](https://img.shields.io/pypi/v/responses?logo=pypi&logoColor=white&label=responses)](https://pypi.org/project/responses/)
 [![PyPI - selenium](https://img.shields.io/pypi/v/selenium?logo=pypi&logoColor=white&label=selenium)](https://pypi.org/project/selenium/)
+
+## Extras
+
+Install optional dependencies using extras.
+
+| extra  | installation                        | dependency                                                                                                                                                           |
+| ------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| all    | `pip install chromesession[all]`    | Install all extras.                                                                                                                                                  |
+| driver | `pip install chromesession[driver]` | [![PyPI - chromedrive-py](https://img.shields.io/pypi/v/chromedriver-py?logo=pypi&logoColor=white&label=chromedriver-py)](https://pypi.org/project/chromedriver-py/) |
+| bs4    | `pip install chromesession[bs4]`    | [![PyPI - beautifulsoup4](https://img.shields.io/pypi/v/beautifulsoup4?logo=pypi&logoColor=white&label=beautifulsoup4)](https://pypi.org/project/beautifulsoup4/)    |
 
 ---

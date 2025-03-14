@@ -23,7 +23,7 @@ tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
 name = "beautifulsoup4"
 version = "4.13.3"
 description = "Screen-scraping library"
-optional = false
+optional = true
 python-versions = ">=3.7.0"
 files = [
     {file = "beautifulsoup4-4.13.3-py3-none-any.whl", hash = "sha256:99045d7d3f08f91f0d656bc9b7efbae189426cd913d830294a15eefa0ea4df16"},
@@ -680,7 +680,7 @@ files = [
 name = "soupsieve"
 version = "2.6"
 description = "A modern CSS selector implementation for Beautiful Soup."
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "soupsieve-2.6-py3-none-any.whl", hash = "sha256:e72c4ff06e4fb6e4b5a9f0f55fe6e81514581fca1515028625d0f299c602ccc9"},
@@ -800,9 +800,11 @@ files = [
 h11 = ">=0.9.0,<1"
 
 [extras]
+all = ["beautifulsoup4", "chromedriver-py"]
+bs4 = ["beautifulsoup4"]
 driver = ["chromedriver-py"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "875e8e71f30898f5cf44c779b41ee1891af4baa2abb9803535160a0381a63eb6"
+content-hash = "90f51f6f569a0b3e088a6da1c343177d362a91325438d3990db3298132c59a7d"

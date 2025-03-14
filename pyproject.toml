@@ -31,12 +31,12 @@ requests-cache = "^1.2.1"
 responses = "^0.25.7"
 selenium = "^4.29.0"
 chromedriver-py = { version = "^134.0.6998.88", optional = true }
+beautifulsoup4 = { version = "^4.13.3", optional = true }
 
 [tool.poetry.extras]
 driver = [ "chromedriver-py" ]
-
-[tool.poetry.group.dev.dependencies]
-beautifulsoup4 = "^4.13.3"
+bs4 = [ "beautifulsoup4" ]
+all = [ "chromedriver-py", "beautifulsoup4" ]
 
 [tool.poetry.group.docs.dependencies]
 pdoc = ">=14.0.0"
