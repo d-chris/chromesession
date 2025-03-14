@@ -42,5 +42,32 @@ all = [ "chromedriver-py", "beautifulsoup4" ]
 pdoc = ">=14.0.0"
 pathlibutil = "^0.3.5"
 
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.0.0"
+pytest-randomly = "^3.16.0"
+pytest-mock = "^3.14.0"
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.24.2"
+
 [tool.isort]
 profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [ "tests" ]
+addopts = [
+  "--color=yes",
+  "--cov=chromesession",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-report=xml",
+]
+
+[tool.coverage.run]
+omit = [ "*/tests/*", "*/docs/*" ]
+
+[tool.coverage.report]
+exclude_lines = [
+  "except ModuleNotFoundError",
+]
