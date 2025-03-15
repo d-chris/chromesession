@@ -4,11 +4,6 @@ from chromesession import CachedSession
 from chromesession.chromium import chrome
 
 
-def test_contains():
-    with CachedSession() as session:
-        assert "https://example.com/" in session
-
-
 def test_urls():
 
     with CachedSession() as session:
@@ -17,9 +12,11 @@ def test_urls():
 
 def test_get():
     with CachedSession() as session:
-        result = session.get("https://example.com/")
+        url = "https://example.com/"
+        result = session.get(url)
 
         assert isinstance(result, requests.Response)
+        assert url in session
 
 
 def test_save_driver():

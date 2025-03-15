@@ -44,6 +44,7 @@ jobs:
       - name: Install poetry
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ matrix.python-version }}
       - name: Install dependencies
+        shell: bash
         run: |
           if [ -z "${{ matrix.poetry-extras }}" ]; then
             poetry install --only main,test
