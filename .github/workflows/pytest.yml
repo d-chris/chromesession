@@ -45,7 +45,11 @@ jobs:
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          poetry install --only main,test --extras ${{ matrix.poetry-extras }}
+          if [ -z "${{ matrix.poetry-extras }}" ]; then
+            poetry install --only main,test
+          else
+            poetry install --only main,test --extras ${{ matrix.poetry-extras }}
+          fi
       - name: Test with pytest
         run: |
           poetry run pytest
