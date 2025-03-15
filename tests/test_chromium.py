@@ -7,8 +7,6 @@ from chromesession.chromium import chromedriver, find_chromedriver
 def test_chrome():
     """check return value from contextmanager."""
 
-    pytest.importorskip("chromedriver_py", reason="chromedriver_py is not installed")
-
     with chrome(verbose=False, mobile=True) as driver:
         assert isinstance(driver, WebDriver)
 

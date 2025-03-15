@@ -34,7 +34,7 @@ def test_soups(options):
 
 
 @pytest.mark.skipif(bs4_missing(), reason="check dummy class if bs4 is not installed.")
-def test_soup_raises(options, mock_chromewebdriver):
+def test_soup_raises(options):
     """raise RuntimeError if bs4 is not installed."""
 
     with pytest.raises(RuntimeError):

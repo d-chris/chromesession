@@ -1,12 +1,13 @@
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 
 from chromesession import WebDriver
 
 
-@pytest.fixture
-def mock_chromewebdriver(mocker):
+@pytest.fixture(scope="session", autouse=True)
+def mock_chromewebdriver():
     """mock WebDriver class."""
 
     class MockedChromeWebDriver(WebDriver):
@@ -33,6 +34,10 @@ def mock_chromewebdriver(mocker):
         def page_source(self) -> str:
             return self.__page_source
 
-    mocker.patch("selenium.webdriver.chrome.webdriver.WebDriver", MockedChromeWebDriver)
+    mocker = patch("selenium.webdriver.Chrome", MockedChromeWebDriver)
 
-    yield
+    try:
+        mocker.start()
+        yield
+    finally:
+        mocker.stop()
