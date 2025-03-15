@@ -18,7 +18,7 @@ jobs:
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ env.PYTHON_VERSION }}
       - name: Install dependencies
         run: |
-          poetry install --only main,docs
+          poetry install --only main,docs --extras bs4
       - name: Create Documentation
         run: |
           poetry run python -m docs
