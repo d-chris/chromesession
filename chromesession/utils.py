@@ -1,8 +1,8 @@
 from collections.abc import Generator, Iterable
 from typing import Callable, Optional
 
-from chromesession.chromium import chrome
-from chromesession.session import CachedSession, Chrome
+from .chromium import chrome
+from .session import CachedSession, Chrome
 
 try:
     from bs4 import BeautifulSoup

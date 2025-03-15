@@ -1,7 +1,9 @@
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
+import requests
+import requests_cache
 
 import chromesession
 
@@ -35,6 +37,31 @@ def mock_chromewebdriver():
             return self.__page_source
 
     mocker = patch("chromesession.chromium.Chrome", MockedChromeWebDriver)
+
+    try:
+        mocker.start()
+        yield
+    finally:
+        mocker.stop()
+
+
+@pytest.fixture(scope="session", autouse=True)
+def mock_cachedsession():
+    """mock CachedSession class."""
+
+    response = MagicMock(spec=requests.Response)
+
+    response.status_code = 200
+    response.text = (
+        Path(__file__).parent.joinpath("bin/example.html").read_text(encoding="utf-8")
+    )
+
+    session = MagicMock(spec=requests_cache.CachedSession)
+
+    session.get.side_effecht = lambda x: response if "example" in x.lower() else None
+    session.__enter__.return_value = session
+
+    mocker = patch("requests_cache.CachedSession", session)
 
     try:
         mocker.start()
