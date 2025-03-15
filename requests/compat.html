@@ -1,0 +1,2212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 15.0.1"/>
+    <title>requests.compat API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#49483e}.pdoc-code{background:#272822; color:#f8f8f2}.pdoc-code .c{color:#75715e}.pdoc-code .err{color:#960050; background-color:#1e0010}.pdoc-code .esc{color:#f8f8f2}.pdoc-code .g{color:#f8f8f2}.pdoc-code .k{color:#66d9ef}.pdoc-code .l{color:#ae81ff}.pdoc-code .n{color:#f8f8f2}.pdoc-code .o{color:#f92672}.pdoc-code .x{color:#f8f8f2}.pdoc-code .p{color:#f8f8f2}.pdoc-code .ch{color:#75715e}.pdoc-code .cm{color:#75715e}.pdoc-code .cp{color:#75715e}.pdoc-code .cpf{color:#75715e}.pdoc-code .c1{color:#75715e}.pdoc-code .cs{color:#75715e}.pdoc-code .gd{color:#f92672}.pdoc-code .ge{color:#f8f8f2; font-style:italic}.pdoc-code .gr{color:#f8f8f2}.pdoc-code .gh{color:#f8f8f2}.pdoc-code .gi{color:#a6e22e}.pdoc-code .go{color:#66d9ef}.pdoc-code .gp{color:#f92672; font-weight:bold}.pdoc-code .gs{color:#f8f8f2; font-weight:bold}.pdoc-code .gu{color:#75715e}.pdoc-code .gt{color:#f8f8f2}.pdoc-code .kc{color:#66d9ef}.pdoc-code .kd{color:#66d9ef}.pdoc-code .kn{color:#f92672}.pdoc-code .kp{color:#66d9ef}.pdoc-code .kr{color:#66d9ef}.pdoc-code .kt{color:#66d9ef}.pdoc-code .ld{color:#e6db74}.pdoc-code .m{color:#ae81ff}.pdoc-code .s{color:#e6db74}.pdoc-code .na{color:#a6e22e}.pdoc-code .nb{color:#f8f8f2}.pdoc-code .nc{color:#a6e22e}.pdoc-code .no{color:#66d9ef}.pdoc-code .nd{color:#a6e22e}.pdoc-code .ni{color:#f8f8f2}.pdoc-code .ne{color:#a6e22e}.pdoc-code .nf{color:#a6e22e}.pdoc-code .nl{color:#f8f8f2}.pdoc-code .nn{color:#f8f8f2}.pdoc-code .nx{color:#a6e22e}.pdoc-code .py{color:#f8f8f2}.pdoc-code .nt{color:#f92672}.pdoc-code .nv{color:#f8f8f2}.pdoc-code .ow{color:#f92672}.pdoc-code .w{color:#f8f8f2}.pdoc-code .mb{color:#ae81ff}.pdoc-code .mf{color:#ae81ff}.pdoc-code .mh{color:#ae81ff}.pdoc-code .mi{color:#ae81ff}.pdoc-code .mo{color:#ae81ff}.pdoc-code .sa{color:#e6db74}.pdoc-code .sb{color:#e6db74}.pdoc-code .sc{color:#e6db74}.pdoc-code .dl{color:#e6db74}.pdoc-code .sd{color:#e6db74}.pdoc-code .s2{color:#e6db74}.pdoc-code .se{color:#ae81ff}.pdoc-code .sh{color:#e6db74}.pdoc-code .si{color:#e6db74}.pdoc-code .sx{color:#e6db74}.pdoc-code .sr{color:#e6db74}.pdoc-code .s1{color:#e6db74}.pdoc-code .ss{color:#e6db74}.pdoc-code .bp{color:#f8f8f2}.pdoc-code .fm{color:#a6e22e}.pdoc-code .vc{color:#f8f8f2}.pdoc-code .vg{color:#f8f8f2}.pdoc-code .vi{color:#f8f8f2}.pdoc-code .vm{color:#f8f8f2}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#212529;}.pdoc{--text:#f7f7f7;--muted:#9d9d9d;--link:#58a6ff;--link-hover:#3989ff;--code:#333;--active:#555;--accent:#343434;--accent2:#555;--nav-hover:rgba(0, 0, 0, 0.1);--name:#77C1FF;--def:#0cdd0c;--annotation:#00c037;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note {color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:35px;vertical-align:middle;width:70px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div><!-- Remove pdoc-button -->
+
+
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="variable" href="#is_py2">is_py2</a>
+            </li>
+            <li>
+                    <a class="variable" href="#is_py3">is_py3</a>
+            </li>
+            <li>
+                    <a class="variable" href="#has_simplejson">has_simplejson</a>
+            </li>
+            <li>
+                    <a class="variable" href="#builtin_str">builtin_str</a>
+            </li>
+            <li>
+                    <a class="class" href="#str">str</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#str.encode">encode</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.replace">replace</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.split">split</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rsplit">rsplit</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.join">join</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.capitalize">capitalize</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.casefold">casefold</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.title">title</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.center">center</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.count">count</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.expandtabs">expandtabs</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.find">find</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.partition">partition</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.index">index</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.ljust">ljust</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.lower">lower</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.lstrip">lstrip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rfind">rfind</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rindex">rindex</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rjust">rjust</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rstrip">rstrip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.rpartition">rpartition</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.splitlines">splitlines</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.strip">strip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.swapcase">swapcase</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.translate">translate</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.upper">upper</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.startswith">startswith</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.endswith">endswith</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.removeprefix">removeprefix</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.removesuffix">removesuffix</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isascii">isascii</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.islower">islower</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isupper">isupper</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.istitle">istitle</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isspace">isspace</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isdecimal">isdecimal</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isdigit">isdigit</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isnumeric">isnumeric</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isalpha">isalpha</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isalnum">isalnum</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isidentifier">isidentifier</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.isprintable">isprintable</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.zfill">zfill</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.format">format</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.format_map">format_map</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#str.maketrans">maketrans</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#bytes">bytes</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#bytes.capitalize">capitalize</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.center">center</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.count">count</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.decode">decode</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.endswith">endswith</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.expandtabs">expandtabs</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.find">find</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.fromhex">fromhex</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.hex">hex</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.index">index</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isalnum">isalnum</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isalpha">isalpha</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isascii">isascii</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isdigit">isdigit</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.islower">islower</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isspace">isspace</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.istitle">istitle</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.isupper">isupper</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.join">join</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.ljust">ljust</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.lower">lower</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.lstrip">lstrip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.maketrans">maketrans</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.partition">partition</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.replace">replace</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.removeprefix">removeprefix</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.removesuffix">removesuffix</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rfind">rfind</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rindex">rindex</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rjust">rjust</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rpartition">rpartition</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rsplit">rsplit</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.rstrip">rstrip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.split">split</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.splitlines">splitlines</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.startswith">startswith</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.strip">strip</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.swapcase">swapcase</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.title">title</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.translate">translate</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.upper">upper</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#bytes.zfill">zfill</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#basestring">basestring</a>
+            </li>
+            <li>
+                    <a class="variable" href="#numeric_types">numeric_types</a>
+            </li>
+            <li>
+                    <a class="variable" href="#integer_types">integer_types</a>
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22150%22%20viewBox%3D%22-1%200%2060%2030%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M29.621%2021.293c-.011-.273-.214-.475-.511-.481a.5.5%200%200%200-.489.503l-.044%201.393c-.097.551-.695%201.215-1.566%201.704-.577.428-1.306.486-2.193.182-1.426-.617-2.467-1.654-3.304-2.487l-.173-.172a3.43%203.43%200%200%200-.365-.306.49.49%200%200%200-.286-.196c-1.718-1.06-4.931-1.47-7.353.191l-.219.15c-1.707%201.187-3.413%202.131-4.328%201.03-.02-.027-.49-.685-.141-1.763.233-.721.546-2.408.772-4.076.042-.09.067-.187.046-.288.166-1.347.277-2.625.241-3.351%201.378-1.008%202.271-2.586%202.271-4.362%200-.976-.272-1.935-.788-2.774-.057-.094-.122-.18-.184-.268.033-.167.052-.339.052-.516%200-1.477-1.202-2.679-2.679-2.679-.791%200-1.496.352-1.987.9a6.3%206.3%200%200%200-1.001.029c-.492-.564-1.207-.929-2.012-.929-1.477%200-2.679%201.202-2.679%202.679A2.65%202.65%200%200%200%20.97%206.554c-.383.747-.595%201.572-.595%202.41%200%202.311%201.507%204.29%203.635%205.107-.037.699-.147%202.27-.423%203.294l-.137.461c-.622%202.042-2.515%208.257%201.727%2010.643%201.614.908%203.06%201.248%204.317%201.248%202.665%200%204.492-1.524%205.322-2.401%201.476-1.559%202.886-1.854%206.491.82%201.877%201.393%203.514%201.753%204.861%201.068%202.223-1.713%202.811-3.867%203.399-6.374.077-.846.056-1.469.054-1.537zm-4.835%204.313c-.054.305-.156.586-.242.629-.034-.007-.131-.022-.307-.157-.145-.111-.314-.478-.456-.908.221.121.432.25.675.355.115.039.219.051.33.081zm-2.251-1.238c-.05.33-.158.648-.252.694-.022.001-.125-.018-.307-.157-.217-.166-.488-.906-.639-1.573.358.344.754.693%201.198%201.036zm-3.887-2.337c-.006-.116-.018-.231-.041-.342.635.145%201.189.368%201.599.625.097.231.166.481.174.642-.03.049-.055.101-.067.158-.046.013-.128.026-.298.004-.278-.037-.901-.57-1.367-1.087zm-1.127-.497c.116.306.176.625.12.71-.019.014-.117.045-.345.016-.206-.027-.604-.332-.986-.695.41-.051.816-.056%201.211-.031zm-4.535%201.535c.209.22.379.47.358.598-.006.041-.088.138-.351.234-.144.055-.539-.063-.979-.259a11.66%2011.66%200%200%200%20.972-.573zm.983-.664c.359-.237.738-.418%201.126-.554.25.237.479.548.457.694-.006.042-.087.138-.351.235-.174.064-.694-.105-1.232-.375zm-3.381%201.794c-.022.145-.061.29-.149.401-.133.166-.358.248-.69.251h-.002c-.133%200-.306-.26-.45-.621.417.091.854.07%201.291-.031zm-2.066-8.077a4.78%204.78%200%200%201-.775-.584c.172-.115.505-.254.88-.378l-.105.962zm-.331%202.302a10.32%2010.32%200%200%201-.828-.502c.202-.143.576-.328.984-.49l-.156.992zm-.45%202.157l-.701-.403c.214-.115.536-.249.891-.376a11.57%2011.57%200%200%201-.19.779zm-.181%201.716c.064.398.194.702.298.893-.194-.051-.435-.162-.736-.398.061-.119.224-.3.438-.495zM8.87%204.141c0%20.152-.123.276-.276.276s-.275-.124-.275-.276.123-.276.276-.276.275.124.275.276zm-.735-.389a1.15%201.15%200%200%200-.314.783%201.16%201.16%200%200%200%201.162%201.162c.457%200%20.842-.27%201.032-.653.026.117.042.238.042.362a1.68%201.68%200%200%201-1.679%201.679%201.68%201.68%200%200%201-1.679-1.679c0-.843.626-1.535%201.436-1.654zM5.059%205.406A1.68%201.68%200%200%201%203.38%207.085a1.68%201.68%200%200%201-1.679-1.679c0-.037.009-.072.011-.109.21.3.541.508.935.508a1.16%201.16%200%200%200%201.162-1.162%201.14%201.14%200%200%200-.474-.912c.015%200%20.03-.005.045-.005.926.001%201.679.754%201.679%201.68zM3.198%204.141c0%20.152-.123.276-.276.276s-.275-.124-.275-.276.123-.276.276-.276.275.124.275.276zM1.375%208.964c0-.52.103-1.035.288-1.52.466.394%201.06.64%201.717.64%201.144%200%202.116-.725%202.499-1.738.383%201.012%201.355%201.738%202.499%201.738.867%200%201.631-.421%202.121-1.062.307.605.478%201.267.478%201.942%200%202.486-2.153%204.51-4.801%204.51s-4.801-2.023-4.801-4.51zm24.342%2019.349c-.985.498-2.267.168-3.813-.979-3.073-2.281-5.453-3.199-7.813-.705-1.315%201.391-4.163%203.365-8.423.97-3.174-1.786-2.239-6.266-1.261-9.479l.146-.492c.276-1.02.395-2.457.444-3.268a6.11%206.11%200%200%200%201.18.115%206.01%206.01%200%200%200%202.536-.562l-.006.175c-.802.215-1.848.612-2.021%201.25-.079.295.021.601.274.837.219.203.415.364.598.501-.667.304-1.243.698-1.311%201.179-.02.144-.022.507.393.787.213.144.395.26.564.365-1.285.521-1.361.96-1.381%201.126-.018.142-.011.496.427.746l.854.489c-.473.389-.971.914-.999%201.429-.018.278.095.532.316.713.675.556%201.231.721%201.653.721.059%200%20.104-.014.158-.02.207.707.641%201.64%201.513%201.64h.013c.8-.008%201.236-.345%201.462-.626.173-.216.268-.457.325-.692.424.195.93.374%201.372.374.151%200%20.294-.021.423-.068.732-.27.944-.704.993-1.021.009-.061.003-.119.002-.179.266.086.538.147.789.147.15%200%20.294-.021.423-.069.542-.2.797-.489.914-.754.237.147.478.258.704.288.106.014.205.021.296.021.356%200%20.595-.101.767-.229.438.435%201.094.992%201.656%201.067.106.014.205.021.296.021a1.56%201.56%200%200%200%20.323-.035c.17.575.453%201.289.866%201.605.358.273.665.362.914.362a.99.99%200%200%200%20.421-.093%201.03%201.03%200%200%200%20.245-.164c.168.428.39.846.68%201.068.358.273.665.362.913.362a.99.99%200%200%200%20.421-.093c.317-.148.512-.448.639-.762.251.157.495.257.726.257.127%200%20.25-.024.37-.071.427-.17.706-.617.841-1.314.022-.015.047-.022.068-.038.067-.051.133-.104.196-.159-.443%201.486-1.107%202.761-2.086%203.257zM8.66%209.925a.5.5%200%201%200-1%200c0%20.653-.818%201.205-1.787%201.205s-1.787-.552-1.787-1.205a.5.5%200%201%200-1%200c0%201.216%201.25%202.205%202.787%202.205s2.787-.989%202.787-2.205zm4.4%2015.965l-.208.097c-2.661%201.258-4.708%201.436-6.086.527-1.542-1.017-1.88-3.19-1.844-4.198a.4.4%200%200%200-.385-.414c-.242-.029-.406.164-.414.385-.046%201.249.367%203.686%202.202%204.896.708.467%201.547.7%202.51.7%201.248%200%202.706-.392%204.362-1.174l.185-.086a.4.4%200%200%200%20.205-.527c-.089-.204-.326-.291-.527-.206zM9.547%202.292c.093.077.205.114.317.114a.5.5%200%200%200%20.318-.886L8.817.397a.5.5%200%200%200-.703.068.5.5%200%200%200%20.069.703l1.364%201.124zm-7.661-.065c.086%200%20.173-.022.253-.068l1.523-.893a.5.5%200%200%200-.506-.863l-1.523.892a.5.5%200%200%200-.179.685c.094.158.261.247.432.247z%22%20transform%3D%22matrix%28-1%200%200%201%2058%200%29%22%20fill%3D%22%233bb300%22/%3E%3Cpath%20d%3D%22M.3%2021.86V10.18q0-.46.02-.68.04-.22.18-.5.28-.54%201.34-.54%201.06%200%201.42.28.38.26.44.78.76-1.04%202.38-1.04%201.64%200%203.1%201.54%201.46%201.54%201.46%203.58%200%202.04-1.46%203.58-1.44%201.54-3.08%201.54-1.64%200-2.38-.92v4.04q0%20.46-.04.68-.02.22-.18.5-.14.3-.5.42-.36.12-.98.12-.62%200-1-.12-.36-.12-.52-.4-.14-.28-.18-.5-.02-.22-.02-.68zm3.96-9.42q-.46.54-.46%201.18%200%20.64.46%201.18.48.52%201.2.52.74%200%201.24-.52.52-.52.52-1.18%200-.66-.48-1.18-.48-.54-1.26-.54-.76%200-1.22.54zm14.741-8.36q.16-.3.54-.42.38-.12%201-.12.64%200%201.02.12.38.12.52.42.16.3.18.54.04.22.04.68v11.94q0%20.46-.04.7-.02.22-.18.5-.3.54-1.7.54-1.38%200-1.54-.98-.84.96-2.34.96-1.8%200-3.28-1.56-1.48-1.58-1.48-3.66%200-2.1%201.48-3.68%201.5-1.58%203.28-1.58%201.48%200%202.3%201v-4.2q0-.46.02-.68.04-.24.18-.52zm-3.24%2010.86q.52.54%201.26.54.74%200%201.22-.54.5-.54.5-1.18%200-.66-.48-1.22-.46-.56-1.26-.56-.8%200-1.28.56-.48.54-.48%201.2%200%20.66.52%201.2zm7.833-1.2q0-2.4%201.68-3.96%201.68-1.56%203.84-1.56%202.16%200%203.82%201.56%201.66%201.54%201.66%203.94%200%201.66-.86%202.96-.86%201.28-2.1%201.9-1.22.6-2.54.6-1.32%200-2.56-.64-1.24-.66-2.1-1.92-.84-1.28-.84-2.88zm4.18%201.44q.64.48%201.3.48.66%200%201.32-.5.66-.5.66-1.48%200-.98-.62-1.46-.62-.48-1.34-.48-.72%200-1.34.5-.62.5-.62%201.48%200%20.96.64%201.46zm11.412-1.44q0%20.84.56%201.32.56.46%201.18.46.64%200%201.18-.36.56-.38.9-.38.6%200%201.46%201.06.46.58.46%201.04%200%20.76-1.1%201.42-1.14.8-2.8.8-1.86%200-3.58-1.34-.82-.64-1.34-1.7-.52-1.08-.52-2.36%200-1.3.52-2.34.52-1.06%201.34-1.7%201.66-1.32%203.54-1.32.76%200%201.48.22.72.2%201.06.4l.32.2q.36.24.56.38.52.4.52.92%200%20.5-.42%201.14-.72%201.1-1.38%201.1-.38%200-1.08-.44-.36-.34-1.04-.34-.66%200-1.24.48-.58.48-.58%201.34z%22%20fill%3D%22green%22/%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+<a href="./../requests.html">requests</a><wbr>.compat    </h1>
+
+                        <div class="docstring"><p><a href="">requests.compat</a>
+<s>~</s><s>~</s><s>~</s></p>
+
+<p>This module previously handled import compatibility issues
+between Python 2 and Python 3. It remains for backwards
+compatibility until the next major version.</p>
+</div>
+
+                
+                
+                
+            </section>
+                <section id="is_py2">
+                    <div class="attr variable">
+            <span class="name">is_py2</span>        =
+<span class="default_value">False</span>
+
+        
+    </div>
+    <a class="headerlink" href="#is_py2"></a>
+    
+    
+
+                </section>
+                <section id="is_py3">
+                    <div class="attr variable">
+            <span class="name">is_py3</span>        =
+<span class="default_value">True</span>
+
+        
+    </div>
+    <a class="headerlink" href="#is_py3"></a>
+    
+    
+
+                </section>
+                <section id="has_simplejson">
+                    <div class="attr variable">
+            <span class="name">has_simplejson</span>        =
+<span class="default_value">False</span>
+
+        
+    </div>
+    <a class="headerlink" href="#has_simplejson"></a>
+    
+    
+
+                </section>
+                <section id="builtin_str">
+                    <div class="attr variable">
+            <span class="name">builtin_str</span>        =
+<span class="default_value">&lt;class &#39;str&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#builtin_str"></a>
+    
+    
+
+                </section>
+                <section id="str">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">str</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#str"></a>
+    
+            <div class="docstring"><p>str(object='') -> str
+str(bytes_or_buffer[, encoding[, errors]]) -> str</p>
+
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.__str__() (if defined)
+or repr(object).
+encoding defaults to 'utf-8'.
+errors defaults to 'strict'.</p>
+</div>
+
+
+                            <div id="str.encode" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">encode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span>, </span><span class="param"><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;strict&#39;</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.encode"></a>
+    
+            <div class="docstring"><p>Encode the string using the codec registered for encoding.</p>
+
+<p>encoding
+  The encoding in which to encode the string.
+errors
+  The error handling scheme to use for encoding errors.
+  The default is 'strict' meaning that encoding errors raise a
+  UnicodeEncodeError.  Other possible values are 'ignore', 'replace' and
+  'xmlcharrefreplace' as well as any other name registered with
+  codecs.register_error that can handle UnicodeEncodeErrors.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.replace" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">replace</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">old</span>, </span><span class="param"><span class="n">new</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">count</span><span class="o">=-</span><span class="mi">1</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.replace"></a>
+    
+            <div class="docstring"><p>Return a copy with all occurrences of substring old replaced by new.</p>
+
+<p>count
+    Maximum number of occurrences to replace.
+    -1 (the default value) means replace all occurrences.</p>
+
+<p>If the optional argument count is given, only the first count occurrences are
+replaced.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.split" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">split</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">sep</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.split"></a>
+    
+            <div class="docstring"><p>Return a list of the substrings in the string, using sep as the separator string.</p>
+
+<p>sep
+    The separator used to split the string.</p>
+
+<pre><code>When set to None (the default value), will split on any whitespace
+character (including \n \r \t \f and spaces) and will discard
+empty strings from the result.
+</code></pre>
+
+<p>maxsplit
+    Maximum number of splits.
+    -1 (the default value) means no limit.</p>
+
+<p>Splitting starts at the front of the string and works to the end.</p>
+
+<p>Note, <a href="#str.split">str.split()</a> is mainly useful for data that has been intentionally
+delimited.  With natural text that includes punctuation, consider using
+the regular expression module.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rsplit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rsplit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">sep</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rsplit"></a>
+    
+            <div class="docstring"><p>Return a list of the substrings in the string, using sep as the separator string.</p>
+
+<p>sep
+    The separator used to split the string.</p>
+
+<pre><code>When set to None (the default value), will split on any whitespace
+character (including \n \r \t \f and spaces) and will discard
+empty strings from the result.
+</code></pre>
+
+<p>maxsplit
+    Maximum number of splits.
+    -1 (the default value) means no limit.</p>
+
+<p>Splitting starts at the end of the string and works to the front.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.join" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">join</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">iterable</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.join"></a>
+    
+            <div class="docstring"><p>Concatenate any number of strings.</p>
+
+<p>The string whose method is called is inserted in between each given string.
+The result is returned as a new string.</p>
+
+<p>Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'</p>
+</div>
+
+
+                            </div>
+                            <div id="str.capitalize" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">capitalize</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.capitalize"></a>
+    
+            <div class="docstring"><p>Return a capitalized version of the string.</p>
+
+<p>More specifically, make the first character have upper case and the rest lower
+case.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.casefold" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">casefold</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.casefold"></a>
+    
+            <div class="docstring"><p>Return a version of the string suitable for caseless comparisons.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.title" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">title</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.title"></a>
+    
+            <div class="docstring"><p>Return a version of the string where each word is titlecased.</p>
+
+<p>More specifically, words start with uppercased characters and all remaining
+cased characters have lower case.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.center" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">center</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.center"></a>
+    
+            <div class="docstring"><p>Return a centered string of length width.</p>
+
+<p>Padding is done using the specified fill character (default is a space).</p>
+</div>
+
+
+                            </div>
+                            <div id="str.count" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">count</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.count"></a>
+    
+            <div class="docstring"><p>Return the number of non-overlapping occurrences of substring sub in string S[start:end].</p>
+
+<p>Optional arguments start and end are interpreted as in slice notation.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.expandtabs" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">expandtabs</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">tabsize</span><span class="o">=</span><span class="mi">8</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.expandtabs"></a>
+    
+            <div class="docstring"><p>Return a copy where all tab characters are expanded using spaces.</p>
+
+<p>If tabsize is not given, a tab size of 8 characters is assumed.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.find" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">find</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.find"></a>
+    
+            <div class="docstring"><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.partition" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">partition</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">sep</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.partition"></a>
+    
+            <div class="docstring"><p>Partition the string into three parts using the given separator.</p>
+
+<p>This will search for the separator in the string.  If the separator is found,
+returns a 3-tuple containing the part before the separator, the separator
+itself, and the part after it.</p>
+
+<p>If the separator is not found, returns a 3-tuple containing the original string
+and two empty strings.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.index" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">index</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.index"></a>
+    
+            <div class="docstring"><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.ljust" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ljust</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.ljust"></a>
+    
+            <div class="docstring"><p>Return a left-justified string of length width.</p>
+
+<p>Padding is done using the specified fill character (default is a space).</p>
+</div>
+
+
+                            </div>
+                            <div id="str.lower" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">lower</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.lower"></a>
+    
+            <div class="docstring"><p>Return a copy of the string converted to lowercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.lstrip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">lstrip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">chars</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.lstrip"></a>
+    
+            <div class="docstring"><p>Return a copy of the string with leading whitespace removed.</p>
+
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rfind" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rfind</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rfind"></a>
+    
+            <div class="docstring"><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rindex" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rindex</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rindex"></a>
+    
+            <div class="docstring"><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rjust" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rjust</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rjust"></a>
+    
+            <div class="docstring"><p>Return a right-justified string of length width.</p>
+
+<p>Padding is done using the specified fill character (default is a space).</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rstrip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rstrip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">chars</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rstrip"></a>
+    
+            <div class="docstring"><p>Return a copy of the string with trailing whitespace removed.</p>
+
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.rpartition" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rpartition</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">sep</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.rpartition"></a>
+    
+            <div class="docstring"><p>Partition the string into three parts using the given separator.</p>
+
+<p>This will search for the separator in the string, starting at the end. If
+the separator is found, returns a 3-tuple containing the part before the
+separator, the separator itself, and the part after it.</p>
+
+<p>If the separator is not found, returns a 3-tuple containing two empty strings
+and the original string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.splitlines" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">splitlines</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">keepends</span><span class="o">=</span><span class="kc">False</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.splitlines"></a>
+    
+            <div class="docstring"><p>Return a list of the lines in the string, breaking at line boundaries.</p>
+
+<p>Line breaks are not included in the resulting list unless keepends is given and
+true.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.strip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">strip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">chars</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.strip"></a>
+    
+            <div class="docstring"><p>Return a copy of the string with leading and trailing whitespace removed.</p>
+
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.swapcase" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">swapcase</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.swapcase"></a>
+    
+            <div class="docstring"><p>Convert uppercase characters to lowercase and lowercase characters to uppercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.translate" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">translate</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">table</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.translate"></a>
+    
+            <div class="docstring"><p>Replace each character in the string using the given translation table.</p>
+
+<p>table
+    Translation table, which must be a mapping of Unicode ordinals to
+    Unicode ordinals, strings, or None.</p>
+
+<p>The table must implement lookup/indexing via __getitem__, for instance a
+dictionary or list.  If this operation raises LookupError, the character is
+left untouched.  Characters mapped to None are deleted.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.upper" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">upper</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.upper"></a>
+    
+            <div class="docstring"><p>Return a copy of the string converted to uppercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.startswith" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">startswith</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.startswith"></a>
+    
+            <div class="docstring"><p>Return True if the string starts with the specified prefix, False otherwise.</p>
+
+<p>prefix
+  A string or a tuple of strings to try.
+start
+  Optional start position. Default: start of the string.
+end
+  Optional stop position. Default: end of the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.endswith" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">endswith</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.endswith"></a>
+    
+            <div class="docstring"><p>Return True if the string ends with the specified suffix, False otherwise.</p>
+
+<p>suffix
+  A string or a tuple of strings to try.
+start
+  Optional start position. Default: start of the string.
+end
+  Optional stop position. Default: end of the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.removeprefix" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">removeprefix</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">prefix</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.removeprefix"></a>
+    
+            <div class="docstring"><p>Return a str with the given prefix string removed if present.</p>
+
+<p>If the string starts with the prefix string, return string[len(prefix):].
+Otherwise, return a copy of the original string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.removesuffix" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">removesuffix</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">suffix</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.removesuffix"></a>
+    
+            <div class="docstring"><p>Return a str with the given suffix string removed if present.</p>
+
+<p>If the string ends with the suffix string and that suffix is not empty,
+return string[:-len(suffix)]. Otherwise, return a copy of the original
+string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isascii" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isascii</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isascii"></a>
+    
+            <div class="docstring"><p>Return True if all characters in the string are ASCII, False otherwise.</p>
+
+<p>ASCII characters have code points in the range U+0000-U+007F.
+Empty string is ASCII too.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.islower" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">islower</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.islower"></a>
+    
+            <div class="docstring"><p>Return True if the string is a lowercase string, False otherwise.</p>
+
+<p>A string is lowercase if all cased characters in the string are lowercase and
+there is at least one cased character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isupper" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isupper</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isupper"></a>
+    
+            <div class="docstring"><p>Return True if the string is an uppercase string, False otherwise.</p>
+
+<p>A string is uppercase if all cased characters in the string are uppercase and
+there is at least one cased character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.istitle" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">istitle</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.istitle"></a>
+    
+            <div class="docstring"><p>Return True if the string is a title-cased string, False otherwise.</p>
+
+<p>In a title-cased string, upper- and title-case characters may only
+follow uncased characters and lowercase characters only cased ones.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isspace" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isspace</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isspace"></a>
+    
+            <div class="docstring"><p>Return True if the string is a whitespace string, False otherwise.</p>
+
+<p>A string is whitespace if all characters in the string are whitespace and there
+is at least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isdecimal" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isdecimal</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isdecimal"></a>
+    
+            <div class="docstring"><p>Return True if the string is a decimal string, False otherwise.</p>
+
+<p>A string is a decimal string if all characters in the string are decimal and
+there is at least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isdigit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isdigit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isdigit"></a>
+    
+            <div class="docstring"><p>Return True if the string is a digit string, False otherwise.</p>
+
+<p>A string is a digit string if all characters in the string are digits and there
+is at least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isnumeric" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isnumeric</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isnumeric"></a>
+    
+            <div class="docstring"><p>Return True if the string is a numeric string, False otherwise.</p>
+
+<p>A string is numeric if all characters in the string are numeric and there is at
+least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isalpha" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isalpha</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isalpha"></a>
+    
+            <div class="docstring"><p>Return True if the string is an alphabetic string, False otherwise.</p>
+
+<p>A string is alphabetic if all characters in the string are alphabetic and there
+is at least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isalnum" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isalnum</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isalnum"></a>
+    
+            <div class="docstring"><p>Return True if the string is an alpha-numeric string, False otherwise.</p>
+
+<p>A string is alpha-numeric if all characters in the string are alpha-numeric and
+there is at least one character in the string.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isidentifier" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isidentifier</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isidentifier"></a>
+    
+            <div class="docstring"><p>Return True if the string is a valid Python identifier, False otherwise.</p>
+
+<p>Call keyword.iskeyword(s) to test whether string s is a reserved identifier,
+such as "def" or "class".</p>
+</div>
+
+
+                            </div>
+                            <div id="str.isprintable" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isprintable</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.isprintable"></a>
+    
+            <div class="docstring"><p>Return True if the string is printable, False otherwise.</p>
+
+<p>A string is printable if all of its characters are considered printable in
+repr() or if it is empty.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.zfill" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">zfill</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.zfill"></a>
+    
+            <div class="docstring"><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
+
+<p>The string is never truncated.</p>
+</div>
+
+
+                            </div>
+                            <div id="str.format" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">format</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="o">*</span><span class="n">args</span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.format"></a>
+    
+            <div class="docstring"><p>Return a formatted version of the string, using substitutions from args and kwargs.
+The substitutions are identified by braces ('{' and '}').</p>
+</div>
+
+
+                            </div>
+                            <div id="str.format_map" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">format_map</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">mapping</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.format_map"></a>
+    
+            <div class="docstring"><p>Return a formatted version of the string, using substitutions from mapping.
+The substitutions are identified by braces ('{' and '}').</p>
+</div>
+
+
+                            </div>
+                            <div id="str.maketrans" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">maketrans</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#str.maketrans"></a>
+    
+            <div class="docstring"><p>Return a translation table usable for <a href="#str.translate">str.translate()</a>.</p>
+
+<p>If there is only one argument, it must be a dictionary mapping Unicode
+ordinals (integers) or characters to Unicode ordinals, strings or None.
+Character keys will be then converted to ordinals.
+If there are two arguments, they must be strings of equal length, and
+in the resulting dictionary, each character in x will be mapped to the
+character at the same position in y. If there is a third argument, it
+must be a string, whose characters will be mapped to None in the result.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="bytes">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">bytes</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#bytes"></a>
+    
+            <div class="docstring"><p>bytes(iterable_of_ints) -> bytes
+bytes(string, encoding[, errors]) -> bytes
+bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
+bytes(int) -> bytes object of size given by the parameter initialized with null bytes
+bytes() -> empty bytes object</p>
+
+<h6 id="construct-an-immutable-array-of-bytes-from">Construct an immutable array of bytes from:</h6>
+
+<blockquote>
+  <ul>
+  <li>an iterable yielding integers in range(256)</li>
+  <li>a text string encoded using the specified encoding</li>
+  <li>any object implementing the buffer API.</li>
+  <li>an integer</li>
+  </ul>
+</blockquote>
+</div>
+
+
+                            <div id="bytes.capitalize" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">capitalize</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.capitalize"></a>
+    
+            <div class="docstring"><p>B.capitalize() -> copy of B</p>
+
+<p>Return a copy of B with only its first character capitalized (ASCII)
+and the rest lower-cased.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.center" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">center</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.center"></a>
+    
+            <div class="docstring"><p>Return a centered string of length width.</p>
+
+<p>Padding is done using the specified fill character.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.count" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">count</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.count"></a>
+    
+            <div class="docstring"><p>Return the number of non-overlapping occurrences of subsection 'sub' in bytes B[start:end].</p>
+
+<p>start
+  Optional start position. Default: start of the bytes.
+end
+  Optional stop position. Default: end of the bytes.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.decode" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">decode</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span>, </span><span class="param"><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;strict&#39;</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.decode"></a>
+    
+            <div class="docstring"><p>Decode the bytes using the codec registered for encoding.</p>
+
+<p>encoding
+  The encoding with which to decode the bytes.
+errors
+  The error handling scheme to use for the handling of decoding errors.
+  The default is 'strict' meaning that decoding errors raise a
+  UnicodeDecodeError. Other possible values are 'ignore' and 'replace'
+  as well as any other name registered with codecs.register_error that
+  can handle UnicodeDecodeErrors.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.endswith" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">endswith</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.endswith"></a>
+    
+            <div class="docstring"><p>Return True if the bytes ends with the specified suffix, False otherwise.</p>
+
+<p>suffix
+  A bytes or a tuple of bytes to try.
+start
+  Optional start position. Default: start of the bytes.
+end
+  Optional stop position. Default: end of the bytes.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.expandtabs" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">expandtabs</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">tabsize</span><span class="o">=</span><span class="mi">8</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.expandtabs"></a>
+    
+            <div class="docstring"><p>Return a copy where all tab characters are expanded using spaces.</p>
+
+<p>If tabsize is not given, a tab size of 8 characters is assumed.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.find" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">find</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.find"></a>
+    
+            <div class="docstring"><p>Return the lowest index in B where subsection 'sub' is found, such that 'sub' is contained within B[start,end].</p>
+
+<p>start
+    Optional start position. Default: start of the bytes.
+  end
+    Optional stop position. Default: end of the bytes.</p>
+
+<p>Return -1 on failure.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.fromhex" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">fromhex</span><span class="signature pdoc-code condensed">(<span class="param"><span class="nb">type</span>, </span><span class="param"><span class="n">string</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.fromhex"></a>
+    
+            <div class="docstring"><p>Create a bytes object from a string of hexadecimal numbers.</p>
+
+<p>Spaces between two numbers are accepted.
+Example: <a href="#bytes.fromhex">bytes.fromhex</a>('B9 01EF') -> b'\xb9\x01\xef'.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.hex" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">hex</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.hex"></a>
+    
+            <div class="docstring"><p>Create a string of hexadecimal numbers from a bytes object.</p>
+
+<p>sep
+    An optional single character or byte to separate hex bytes.
+  bytes_per_sep
+    How many bytes between separators.  Positive values count from the
+    right, negative values count from the left.</p>
+
+<p>Example:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xb9\x01\xef</span><span class="s1">&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&#39;b901ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span><span class="o">.</span><span class="n">hex</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="go">&#39;b9:01:ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span><span class="o">.</span><span class="n">hex</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;b9:01ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span><span class="o">.</span><span class="n">hex</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;b901:ef&#39;</span>
+</code></pre>
+</div>
+</div>
+
+
+                            </div>
+                            <div id="bytes.index" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">index</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.index"></a>
+    
+            <div class="docstring"><p>Return the lowest index in B where subsection 'sub' is found, such that 'sub' is contained within B[start,end].</p>
+
+<p>start
+    Optional start position. Default: start of the bytes.
+  end
+    Optional stop position. Default: end of the bytes.</p>
+
+<p>Raise ValueError if the subsection is not found.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isalnum" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isalnum</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isalnum"></a>
+    
+            <div class="docstring"><p>B.isalnum() -> bool</p>
+
+<p>Return True if all characters in B are alphanumeric
+and there is at least one character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isalpha" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isalpha</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isalpha"></a>
+    
+            <div class="docstring"><p>B.isalpha() -> bool</p>
+
+<p>Return True if all characters in B are alphabetic
+and there is at least one character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isascii" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isascii</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isascii"></a>
+    
+            <div class="docstring"><p>B.isascii() -> bool</p>
+
+<p>Return True if B is empty or all characters in B are ASCII,
+False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isdigit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isdigit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isdigit"></a>
+    
+            <div class="docstring"><p>B.isdigit() -> bool</p>
+
+<p>Return True if all characters in B are digits
+and there is at least one character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.islower" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">islower</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.islower"></a>
+    
+            <div class="docstring"><p>B.islower() -> bool</p>
+
+<p>Return True if all cased characters in B are lowercase and there is
+at least one cased character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isspace" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isspace</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isspace"></a>
+    
+            <div class="docstring"><p>B.isspace() -> bool</p>
+
+<p>Return True if all characters in B are whitespace
+and there is at least one character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.istitle" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">istitle</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.istitle"></a>
+    
+            <div class="docstring"><p>B.istitle() -> bool</p>
+
+<p>Return True if B is a titlecased string and there is at least one
+character in B, i.e. uppercase characters may only follow uncased
+characters and lowercase characters only cased ones. Return False
+otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.isupper" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">isupper</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.isupper"></a>
+    
+            <div class="docstring"><p>B.isupper() -> bool</p>
+
+<p>Return True if all cased characters in B are uppercase and there is
+at least one cased character in B, False otherwise.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.join" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">join</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">iterable_of_bytes</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.join"></a>
+    
+            <div class="docstring"><p>Concatenate any number of bytes objects.</p>
+
+<p>The bytes whose method is called is inserted in between each pair.</p>
+
+<p>The result is returned as a new bytes object.</p>
+
+<p>Example: b'.'.join([b'ab', b'pq', b'rs']) -> b'ab.pq.rs'.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.ljust" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ljust</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.ljust"></a>
+    
+            <div class="docstring"><p>Return a left-justified string of length width.</p>
+
+<p>Padding is done using the specified fill character.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.lower" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">lower</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.lower"></a>
+    
+            <div class="docstring"><p>B.lower() -> copy of B</p>
+
+<p>Return a copy of B with all ASCII characters converted to lowercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.lstrip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">lstrip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="nb">bytes</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.lstrip"></a>
+    
+            <div class="docstring"><p>Strip leading bytes contained in the argument.</p>
+
+<p>If the argument is omitted or None, strip leading  ASCII whitespace.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.maketrans" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">maketrans</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">frm</span>, </span><span class="param"><span class="n">to</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.maketrans"></a>
+    
+            <div class="docstring"><p>Return a translation table usable for the bytes or bytearray translate method.</p>
+
+<p>The returned table will be one where each byte in frm is mapped to the byte at
+the same position in to.</p>
+
+<p>The bytes objects frm and to must be of the same length.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.partition" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">partition</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">sep</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.partition"></a>
+    
+            <div class="docstring"><p>Partition the bytes into three parts using the given separator.</p>
+
+<p>This will search for the separator sep in the bytes. If the separator is found,
+returns a 3-tuple containing the part before the separator, the separator
+itself, and the part after it.</p>
+
+<p>If the separator is not found, returns a 3-tuple containing the original bytes
+object and two empty bytes objects.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.replace" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">replace</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">old</span>, </span><span class="param"><span class="n">new</span>, </span><span class="param"><span class="n">count</span><span class="o">=-</span><span class="mi">1</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.replace"></a>
+    
+            <div class="docstring"><p>Return a copy with all occurrences of substring old replaced by new.</p>
+
+<p>count
+    Maximum number of occurrences to replace.
+    -1 (the default value) means replace all occurrences.</p>
+
+<p>If the optional argument count is given, only the first count occurrences are
+replaced.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.removeprefix" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">removeprefix</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">prefix</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.removeprefix"></a>
+    
+            <div class="docstring"><p>Return a bytes object with the given prefix string removed if present.</p>
+
+<p>If the bytes starts with the prefix string, return bytes[len(prefix):].
+Otherwise, return a copy of the original bytes.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.removesuffix" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">removesuffix</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">suffix</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.removesuffix"></a>
+    
+            <div class="docstring"><p>Return a bytes object with the given suffix string removed if present.</p>
+
+<p>If the bytes ends with the suffix string and that suffix is not empty,
+return bytes[:-len(prefix)].  Otherwise, return a copy of the original
+bytes.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rfind" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rfind</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rfind"></a>
+    
+            <div class="docstring"><p>Return the highest index in B where subsection 'sub' is found, such that 'sub' is contained within B[start,end].</p>
+
+<p>start
+    Optional start position. Default: start of the bytes.
+  end
+    Optional stop position. Default: end of the bytes.</p>
+
+<p>Return -1 on failure.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rindex" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rindex</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rindex"></a>
+    
+            <div class="docstring"><p>Return the highest index in B where subsection 'sub' is found, such that 'sub' is contained within B[start,end].</p>
+
+<p>start
+    Optional start position. Default: start of the bytes.
+  end
+    Optional stop position. Default: end of the bytes.</p>
+
+<p>Raise ValueError if the subsection is not found.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rjust" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rjust</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="n">fillchar</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39; &#39;</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rjust"></a>
+    
+            <div class="docstring"><p>Return a right-justified string of length width.</p>
+
+<p>Padding is done using the specified fill character.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rpartition" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rpartition</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">sep</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rpartition"></a>
+    
+            <div class="docstring"><p>Partition the bytes into three parts using the given separator.</p>
+
+<p>This will search for the separator sep in the bytes, starting at the end. If
+the separator is found, returns a 3-tuple containing the part before the
+separator, the separator itself, and the part after it.</p>
+
+<p>If the separator is not found, returns a 3-tuple containing two empty bytes
+objects and the original bytes object.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rsplit" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rsplit</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">sep</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rsplit"></a>
+    
+            <div class="docstring"><p>Return a list of the sections in the bytes, using sep as the delimiter.</p>
+
+<p>sep
+    The delimiter according which to split the bytes.
+    None (the default value) means split on ASCII whitespace characters
+    (space, tab, return, newline, formfeed, vertical tab).
+  maxsplit
+    Maximum number of splits to do.
+    -1 (the default value) means no limit.</p>
+
+<p>Splitting is done starting at the end of the bytes and working to the front.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.rstrip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">rstrip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="nb">bytes</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.rstrip"></a>
+    
+            <div class="docstring"><p>Strip trailing bytes contained in the argument.</p>
+
+<p>If the argument is omitted or None, strip trailing ASCII whitespace.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.split" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">split</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">sep</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.split"></a>
+    
+            <div class="docstring"><p>Return a list of the sections in the bytes, using sep as the delimiter.</p>
+
+<p>sep
+  The delimiter according which to split the bytes.
+  None (the default value) means split on ASCII whitespace characters
+  (space, tab, return, newline, formfeed, vertical tab).
+maxsplit
+  Maximum number of splits to do.
+  -1 (the default value) means no limit.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.splitlines" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">splitlines</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">keepends</span><span class="o">=</span><span class="kc">False</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.splitlines"></a>
+    
+            <div class="docstring"><p>Return a list of the lines in the bytes, breaking at line boundaries.</p>
+
+<p>Line breaks are not included in the resulting list unless keepends is given and
+true.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.startswith" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">startswith</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">unknown</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.startswith"></a>
+    
+            <div class="docstring"><p>Return True if the bytes starts with the specified prefix, False otherwise.</p>
+
+<p>prefix
+  A bytes or a tuple of bytes to try.
+start
+  Optional start position. Default: start of the bytes.
+end
+  Optional stop position. Default: end of the bytes.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.strip" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">strip</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="nb">bytes</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.strip"></a>
+    
+            <div class="docstring"><p>Strip leading and trailing bytes contained in the argument.</p>
+
+<p>If the argument is omitted or None, strip leading and trailing ASCII whitespace.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.swapcase" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">swapcase</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.swapcase"></a>
+    
+            <div class="docstring"><p>B.swapcase() -> copy of B</p>
+
+<p>Return a copy of B with uppercase ASCII characters converted
+to lowercase ASCII and vice versa.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.title" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">title</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.title"></a>
+    
+            <div class="docstring"><p>B.title() -> copy of B</p>
+
+<p>Return a titlecased version of B, i.e. ASCII words start with uppercase
+characters, all remaining cased characters have lowercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.translate" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">translate</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">table</span>, </span><span class="param"><span class="o">/</span>, </span><span class="param"><span class="n">delete</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;&#39;</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.translate"></a>
+    
+            <div class="docstring"><p>Return a copy with each character mapped by the given translation table.</p>
+
+<p>table
+    Translation table, which must be a bytes object of length 256.</p>
+
+<p>All characters occurring in the optional argument delete are removed.
+The remaining characters are mapped through the given translation table.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.upper" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">upper</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.upper"></a>
+    
+            <div class="docstring"><p>B.upper() -> copy of B</p>
+
+<p>Return a copy of B with all ASCII characters converted to uppercase.</p>
+</div>
+
+
+                            </div>
+                            <div id="bytes.zfill" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">zfill</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">width</span>, </span><span class="param"><span class="o">/</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#bytes.zfill"></a>
+    
+            <div class="docstring"><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
+
+<p>The original string is never truncated.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="basestring">
+                    <div class="attr variable">
+            <span class="name">basestring</span>        =
+<span class="default_value">(&lt;class &#39;str&#39;&gt;, &lt;class &#39;bytes&#39;&gt;)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#basestring"></a>
+    
+    
+
+                </section>
+                <section id="numeric_types">
+                    <div class="attr variable">
+            <span class="name">numeric_types</span>        =
+<span class="default_value">(&lt;class &#39;int&#39;&gt;, &lt;class &#39;float&#39;&gt;)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#numeric_types"></a>
+    
+    
+
+                </section>
+                <section id="integer_types">
+                    <div class="attr variable">
+            <span class="name">integer_types</span>        =
+<span class="default_value">(&lt;class &#39;int&#39;&gt;,)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#integer_types"></a>
+    
+    
+
+                </section>
+    </main>
+</body>
+</html>
