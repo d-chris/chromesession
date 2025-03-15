@@ -6,10 +6,9 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Optional, Union
 
-from selenium import webdriver
+from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.webdriver import WebDriver
 
 try:
     from chromedriver_py import binary_path as __chromedriver
@@ -64,7 +63,7 @@ def chrome(
     mobile: bool = False,
     verbose: bool = True,
     driver: Optional[os.PathLike] = None,
-) -> Generator[WebDriver, None, None]:
+) -> Generator[Chrome, None, None]:
     """Create a Selenium Chrome webdriver context.
 
     This context manager sets up the Chrome webdriver with specified configuration
@@ -118,7 +117,10 @@ def chrome(
     service = Service(
         executable_path=driver,
     )
-    drv = webdriver.Chrome(service=service, options=chrome_options)
+    drv = Chrome(
+        service=service,
+        options=chrome_options,
+    )
 
     try:
         yield drv

@@ -1,6 +1,6 @@
 import pytest
 
-from chromesession import WebDriver, chrome
+from chromesession import Chrome, chrome
 from chromesession.chromium import chromedriver, find_chromedriver
 
 
@@ -8,7 +8,7 @@ def test_chrome():
     """check return value from contextmanager."""
 
     with chrome(verbose=False, mobile=True) as driver:
-        assert isinstance(driver, WebDriver)
+        assert isinstance(driver, Chrome)
 
 
 def test_find_chromedriver(mocker):

@@ -3,14 +3,14 @@ from unittest.mock import patch
 
 import pytest
 
-from chromesession import WebDriver
+import chromesession
 
 
 @pytest.fixture(scope="session", autouse=True)
 def mock_chromewebdriver():
     """mock WebDriver class."""
 
-    class MockedChromeWebDriver(WebDriver):
+    class MockedChromeWebDriver(chromesession.Chrome):
         def __init__(self, *args, **kwargs):
             self.__current_url = "https://example.com/"
             self.__page_source = (
@@ -34,7 +34,7 @@ def mock_chromewebdriver():
         def page_source(self) -> str:
             return self.__page_source
 
-    mocker = patch("selenium.webdriver.Chrome", MockedChromeWebDriver)
+    mocker = patch("chromesession.chromium.Chrome", MockedChromeWebDriver)
 
     try:
         mocker.start()
