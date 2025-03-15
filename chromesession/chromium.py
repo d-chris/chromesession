@@ -1,19 +1,37 @@
 import os
+import platform
 import shutil
 from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union
 
-from selenium import webdriver
+from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.webdriver import WebDriver
 
 try:
     from chromedriver_py import binary_path as __chromedriver
 except ModuleNotFoundError:
     __chromedriver = None
+
+
+def find_chromedriver() -> Union[str, None]:
+    """Find the ChromeDriver executable in the system PATH.
+
+    This function determines the appropriate executable name based on the current
+    operating system and searches for it in the system PATH.
+
+    Returns:
+        str: The path to the ChromeDriver executable if found, otherwise None.
+    """
+
+    if platform.system() == "Windows":
+        driver = "chromedriver.exe"
+    else:
+        driver = "chromedriver"
+
+    return shutil.which(driver)
 
 
 def chromedriver() -> Path:
@@ -25,15 +43,13 @@ def chromedriver() -> Path:
         Path: The path to the ChromeDriver executable.
     """
 
-    driver = "chromedriver.exe"
-
-    path = __chromedriver or shutil.which(driver)
+    path = __chromedriver or find_chromedriver()
 
     if path is None:
         raise RuntimeError(
             "\n".join(
                 (
-                    f"{driver=} could not be found in PATH.",
+                    "'chromedriver' could not be found in PATH.",
                     f"\tpip install {__package__}[driver]",
                 )
             )
@@ -47,7 +63,7 @@ def chrome(
     mobile: bool = False,
     verbose: bool = True,
     driver: Optional[os.PathLike] = None,
-) -> Generator[WebDriver, None, None]:
+) -> Generator[Chrome, None, None]:
     """Create a Selenium Chrome webdriver context.
 
     This context manager sets up the Chrome webdriver with specified configuration
@@ -101,7 +117,10 @@ def chrome(
     service = Service(
         executable_path=driver,
     )
-    drv = webdriver.Chrome(service=service, options=chrome_options)
+    drv = Chrome(
+        service=service,
+        options=chrome_options,
+    )
 
     try:
         yield drv
