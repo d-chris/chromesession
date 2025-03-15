@@ -34,7 +34,7 @@ class CachedSession(requests_cache.CachedSession):
         """
         return url_normalize(url)
 
-    @functools.lru_cache
+    @functools.lru_cache(maxsize=4096)
     def create_key(self, url: str) -> str:
         """Create a cache key for a given URL.
 

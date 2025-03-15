@@ -4,11 +4,11 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/chromesession)](https://pypi.org/project/chromesession/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/chromesession)](https://pypi.org/project/chromesession/)
 [![PyPI - License](https://img.shields.io/pypi/l/chromesession)](https://raw.githubusercontent.com/d-chris/chromesession/main/LICENSE)
+[![GitHub - Pytest](https://img.shields.io/github/actions/workflow/status/d-chris/chromesession/pytest.yml?logo=github&label=pytest)](https://github.com/d-chris/chromesession/actions/workflows/pytest.yml)
 [![GitHub - Page](https://img.shields.io/website?url=https%3A%2F%2Fd-chris.github.io%2Fchromesession&up_message=pdoc&logo=github&label=documentation)](https://d-chris.github.io/chromesession)
+[![GitHub - Release](https://img.shields.io/github/v/tag/d-chris/chromesession?logo=github&label=github)](https://github.com/d-chris/chromesession)
+[![codecov](https://codecov.io/gh/d-chris/chromesession/graph/badge.svg?token=OFD1IARN1U)](https://codecov.io/gh/d-chris/chromesession)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://raw.githubusercontent.com/d-chris/chromesession/main/.pre-commit-config.yaml)
-<!-- [![GitHub - Pytest](https://img.shields.io/github/actions/workflow/status/d-chris/chromesession/pytest.yml?logo=github&label=pytest)](https://github.com/d-chris/chromesession/actions/workflows/pytest.yml) -->
-<!-- [![GitHub - Release](https://img.shields.io/github/v/tag/d-chris/chromesession?logo=github&label=github)](https://github.com/d-chris/chromesession) -->
-<!-- [![codecov](https://codecov.io/gh/d-chris/chromesession/graph/badge.svg?token=WY062DFVTR)](https://codecov.io/gh/d-chris/chromesession) -->
 
 ---
 
