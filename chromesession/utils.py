@@ -2,28 +2,30 @@ from collections.abc import Generator, Iterable
 from typing import Callable, Optional
 
 from chromesession.chromium import chrome
-from chromesession.session import CachedSession, WebDriver
+from chromesession.session import CachedSession, Chrome
 
 try:
     from bs4 import BeautifulSoup
-except ModuleNotFoundError:
+except ModuleNotFoundError as e:
 
     class BeautifulSoup:  # type: ignore[no-redef]
+        __error = e
+
         def __new__(cls, *args, **kwargs):
             raise RuntimeError(
                 "\n".join(
                     (
-                        "No module named 'bs4' for class BeautifoulSoup.",
+                        f"{cls.__error}",
                         f"\tpip install {__package__}[bs4]",
                     )
                 )
-            )
+            ) from cls.__error
 
 
 def soups(
     urls: Iterable[str],
     *,
-    scraper: Optional[Callable[[WebDriver], None]] = None,
+    scraper: Optional[Callable[[Chrome], None]] = None,
     **kwargs,
 ) -> Generator[BeautifulSoup, None, None]:
     """

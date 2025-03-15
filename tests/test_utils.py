@@ -16,7 +16,7 @@ def options(tmp_path):
     }
 
 
-def bs4_missing():
+def bs4_installed():
     """check if bs4 is available."""
 
     return bool(importlib.util.find_spec("bs4"))
@@ -29,11 +29,18 @@ def test_soups(options):
 
     result = soups(**options)
 
-    assert isinstance(result, Generator)
     assert isinstance(next(result), bs4.BeautifulSoup)
 
 
-@pytest.mark.skipif(bs4_missing(), reason="check dummy class if bs4 is not installed.")
+def test_soups_generator(options):
+    """check if soups is a generator."""
+
+    assert isinstance(soups(**options), Generator)
+
+
+@pytest.mark.skipif(
+    bs4_installed(), reason="check if dummy class raises error if bs4 is not installed."
+)
 def test_soup_raises(options):
     """raise RuntimeError if bs4 is not installed."""
 

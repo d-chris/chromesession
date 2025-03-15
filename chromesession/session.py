@@ -4,8 +4,9 @@ from typing import Optional, Union
 import requests
 import requests_cache
 import responses
-from selenium.webdriver.remote.webdriver import WebDriver
 from url_normalize import url_normalize  # type: ignore[import]
+
+from .chromium import Chrome
 
 
 class CachedSession(requests_cache.CachedSession):
@@ -79,7 +80,7 @@ class CachedSession(requests_cache.CachedSession):
         """
         self.cache.save_response(response, **kwargs)
 
-    def save_driver(self, driver: WebDriver, **kwargs) -> requests.Response:
+    def save_driver(self, driver: Chrome, **kwargs) -> requests.Response:
         """Save a response generated from a WebDriver's page source to the cache.
 
         Args:
@@ -92,7 +93,7 @@ class CachedSession(requests_cache.CachedSession):
         return response
 
     def save(
-        self, response: Union[requests.Response, WebDriver], **kwargs
+        self, response: Union[requests.Response, Chrome], **kwargs
     ) -> requests.Response:
         """Save an HTTP or WebDriver response to the cache.
 
@@ -105,7 +106,7 @@ class CachedSession(requests_cache.CachedSession):
             requests.Response: The cached HTTP response.
         """
 
-        if isinstance(response, WebDriver):
+        if isinstance(response, Chrome):
             return self.save_driver(response, **kwargs)
 
         self.save_response(response, **kwargs)
@@ -126,7 +127,7 @@ class CachedSession(requests_cache.CachedSession):
     @classmethod
     def response(
         cls,
-        driver: WebDriver,
+        driver: Chrome,
         *,
         encoding: Optional[str] = None,
     ) -> requests.Response:
