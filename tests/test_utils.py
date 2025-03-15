@@ -3,26 +3,7 @@ from collections.abc import Generator
 
 import pytest
 
-from chromesession import WebDriver, soups
-
-
-@pytest.fixture
-def mock_driver(mocker):
-    """mock WebDriver class."""
-
-    class DummyDriver(WebDriver):
-        def __init__(self, *args, **kwargs):
-            pass
-
-        def quit(self):
-            pass
-
-        def get(self, arg):
-            pass
-
-    mocker.patch("selenium.webdriver.chrome.webdriver.WebDriver", DummyDriver)
-
-    yield
+from chromesession import soups
 
 
 @pytest.fixture
@@ -53,7 +34,7 @@ def test_soups(options):
 
 
 @pytest.mark.skipif(bs4_missing(), reason="check dummy class if bs4 is not installed.")
-def test_soup_raises(options, mock_driver):
+def test_soup_raises(options, mock_chromewebdriver):
     """raise RuntimeError if bs4 is not installed."""
 
     with pytest.raises(RuntimeError):
