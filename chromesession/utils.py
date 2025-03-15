@@ -40,8 +40,8 @@ def soups(
 
     Args:
         urls (Iterable[str]): An iterable of URL strings to be fetched.
-        scraper (Optional[Callable[[WebDriver], None]]): An optional callback that
-            accepts a WebDriver instance for additional page processing before caching.
+        scraper (Optional[Callable[[Chrome], None]]): An optional callback that
+            accepts a Chorme instance for additional page processing before caching.
         **kwargs: Additional keyword arguments that are passed to the CachedSession.
 
     Returns:
