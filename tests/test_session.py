@@ -24,7 +24,7 @@ def test_get():
 
 def test_save_driver():
     with CachedSession() as session:
-        with chrome() as driver:
+        with chrome(driver="chromedriver") as driver:
             driver.get("https://example.com/")
             result = session.save(driver)
 

@@ -13,6 +13,7 @@ def options(tmp_path):
         "scraper": lambda x: None,
         "verbose": False,
         "cache_name": tmp_path / "cache.sqlite",
+        "driver": "chromedriver",
     }
 
 

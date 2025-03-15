@@ -7,7 +7,7 @@ from chromesession.chromium import chromedriver, find_chromedriver
 def test_chrome():
     """check return value from contextmanager."""
 
-    with chrome(verbose=False, mobile=True) as driver:
+    with chrome(driver="chromedriver", verbose=False, mobile=True) as driver:
         assert isinstance(driver, Chrome)
 
 
@@ -22,7 +22,7 @@ def test_find_chromedriver(mocker):
     assert result.startswith("chromedriver")
 
 
-def test_chromedriver(mocker):
+def test_chromedriver_missing(mocker):
     """raise RuntimeError if chromedriver is not found."""
 
     mocker.patch("chromesession.chromium.__chromedriver", None)
@@ -30,3 +30,12 @@ def test_chromedriver(mocker):
 
     with pytest.raises(RuntimeError):
         chromedriver()
+
+
+def test_chromedriver(mocker):
+    """returns path to chromedriver."""
+
+    mocker.patch("chromesession.chromium.__chromedriver", "chromedriver")
+    mocker.patch("chromesession.chromium.Path.resolve", return_value="chromedriver")
+
+    assert chromedriver() == "chromedriver"
