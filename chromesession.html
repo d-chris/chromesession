@@ -96,11 +96,11 @@ chromesession    </h1>
 <a href="https://pypi.org/project/chromesession/"><img src="https://img.shields.io/pypi/v/chromesession" alt="PyPI - Version" /></a>
 <a href="https://pypi.org/project/chromesession/"><img src="https://img.shields.io/pypi/dm/chromesession" alt="PyPI - Downloads" /></a>
 <a href="https://raw.githubusercontent.com/d-chris/chromesession/main/LICENSE"><img src="https://img.shields.io/pypi/l/chromesession" alt="PyPI - License" /></a>
+<a href="https://github.com/d-chris/chromesession/actions/workflows/pytest.yml"><img src="https://img.shields.io/github/actions/workflow/status/d-chris/chromesession/pytest.yml?logo=github&label=pytest" alt="GitHub - Pytest" /></a>
 <a href="https://d-chris.github.io/chromesession"><img src="https://img.shields.io/website?url=https%3A%2F%2Fd-chris.github.io%2Fchromesession&up_message=pdoc&logo=github&label=documentation" alt="GitHub - Page" /></a>
-<a href="https://raw.githubusercontent.com/d-chris/chromesession/main/.pre-commit-config.yaml"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit" alt="pre-commit" /></a>
-<!-- <a href="https://github.com/d-chris/chromesession/actions/workflows/pytest.yml"><img src="https://img.shields.io/github/actions/workflow/status/d-chris/chromesession/pytest.yml?logo=github&label=pytest" alt="GitHub - Pytest" /></a> -->
-<!-- <a href="https://github.com/d-chris/chromesession"><img src="https://img.shields.io/github/v/tag/d-chris/chromesession?logo=github&label=github" alt="GitHub - Release" /></a> -->
-<!-- <a href="https://codecov.io/gh/d-chris/chromesession"><img src="https://codecov.io/gh/d-chris/chromesession/graph/badge.svg?token=WY062DFVTR" alt="codecov" /></a> --></p>
+<a href="https://github.com/d-chris/chromesession"><img src="https://img.shields.io/github/v/tag/d-chris/chromesession?logo=github&label=github" alt="GitHub - Release" /></a>
+<a href="https://codecov.io/gh/d-chris/chromesession"><img src="https://codecov.io/gh/d-chris/chromesession/graph/badge.svg?token=OFD1IARN1U" alt="codecov" /></a>
+<a href="https://raw.githubusercontent.com/d-chris/chromesession/main/.pre-commit-config.yaml"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit" alt="pre-commit" /></a></p>
 
 <hr />
 
@@ -113,9 +113,9 @@ chromesession    </h1>
 <pre><code>pip install chromesession
 </code></pre>
 
-<p>To use the <code><a href="#chrome">chromesession.chrome</a></code> contextmanager to use <code><a href="selenium.html">selenium</a></code>, the <a href="https://googlechromelabs.github.io/chrome-for-testing/">chromedriver</a> must be installed the system.</p>
+<p>To use the <code><a href="#chrome">chromesession.chrome</a></code> context manager with <code><a href="selenium.html">selenium</a></code>, the <a href="https://googlechromelabs.github.io/chrome-for-testing/">chromedriver</a> must be installed on the system.</p>
 
-<p>Alternatively, you can install the latest <code>chromedriver</code> as <a href="#extras">extra</a>.</p>
+<p>Alternatively, you can install the latest <code>chromedriver</code> as an <a href="#extras">extra</a>.</p>
 
 <pre><code>pip install chromesession[driver]
 </code></pre>
@@ -281,7 +281,7 @@ be cached. See :ref:<code>custom-filtering</code> for details.</li>
                             </div>
                             <div id="CachedSession.create_key" class="classattr">
                                 <div class="attr function">
-                    <div class="decorator decorator-functools.lru_cache">@functools.lru_cache</div>
+                    <div class="decorator decorator-functools.lru_cache">@functools.lru_cache(maxsize=4096)</div>
 
         <span class="def">def</span>
         <span class="name">create_key</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">url</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
