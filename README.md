@@ -22,9 +22,9 @@ In addition, a `CachedSession` is provided to directly cache the driver response
 pip install chromesession
 ```
 
-To use the `chromesession.chrome` contextmanager to use `selenium`, the [chromedriver](https://googlechromelabs.github.io/chrome-for-testing/) must be installed the system.
+To use the `chromesession.chrome` context manager with `selenium`, the [chromedriver](https://googlechromelabs.github.io/chrome-for-testing/) must be installed on the system.
 
-Alternatively, you can install the latest `chromedriver` as [extra](#extras).
+Alternatively, you can install the latest `chromedriver` as an [extra](#extras).
 
 ```cmd
 pip install chromesession[driver]

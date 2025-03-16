@@ -5,6 +5,7 @@ on:
 env:
   PYTHON_VERSION: "3.13"
   POETRY_VERSION: "1.8.5"
+  POETRY_VIRTUALENVS_IN_PROJECT: true
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -16,6 +17,13 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install poetry
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ env.PYTHON_VERSION }}
+      - name: Cache poetry venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-${{ env.POETRY_VERSION }}-venv-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.POETRY_VERSION }}--venv-
       - name: Install dependencies
         run: |
           poetry install --only main,docs --extras bs4
