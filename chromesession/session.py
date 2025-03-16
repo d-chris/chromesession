@@ -1,5 +1,5 @@
 import functools
-from typing import Optional, Union
+from typing import Callable, Optional, Union
 
 import requests
 import requests_cache
@@ -10,6 +10,20 @@ from .chromium import Chrome
 
 
 class CachedSession(requests_cache.CachedSession):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.create_key: Callable[[str], str] = functools.lru_cache(maxsize=4096)(
+            self.uncached_create_key
+        )
+        """Create and cache key for a given URL.
+
+        Args:
+            url (str): The URL for which to generate a cache key.
+
+        Returns:
+            str: The cached cache key.
+        """
 
     def __contains__(self, url: str) -> bool:
         """Determine if a URL is present in the cache.
@@ -34,8 +48,7 @@ class CachedSession(requests_cache.CachedSession):
         """
         return url_normalize(url)
 
-    @functools.lru_cache(maxsize=4096)
-    def create_key(self, url: str) -> str:
+    def uncached_create_key(self, url: str) -> str:
         """Create a cache key for a given URL.
 
         Args:
@@ -44,6 +57,7 @@ class CachedSession(requests_cache.CachedSession):
         Returns:
             str: The created cache key.
         """
+
         response = requests.Request("GET", self.normalize(url)).prepare()
         return self.cache.create_key(response)
 
