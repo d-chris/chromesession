@@ -5,6 +5,7 @@ on:
     branches: ["main"]
 env:
   POETRY_VERSION: "1.8.5"
+  POETRY_VIRTUALENVS_IN_PROJECT: true
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -21,6 +22,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install poetry
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ matrix.python-version }}
+      - name: Cache poetry venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-venv-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-venv-
       - name: Install dependencies
         run: |
           poetry install --only main,test
@@ -43,6 +51,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install poetry
         run: pipx install poetry==${{ env.POETRY_VERSION }} --python ${{ matrix.python-version }}
+      - name: Cache poetry venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ matrix.os }}-${{ matrix.python-version }}-venv-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.python-version }}-venv-
       - name: Install dependencies
         shell: bash
         run: |
