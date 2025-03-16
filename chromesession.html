@@ -39,10 +39,13 @@
                     <a class="class" href="#CachedSession">CachedSession</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#CachedSession.normalize">normalize</a>
+                                <a class="function" href="#CachedSession.__init__">CachedSession</a>
                         </li>
                         <li>
                                 <a class="function" href="#CachedSession.create_key">create_key</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#CachedSession.normalize">normalize</a>
                         </li>
                         <li>
                                 <a class="function" href="#CachedSession.urls">urls</a>
@@ -208,7 +211,7 @@ chromesession    </h1>
                     <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">CachedSession</span><wbr>(<span class="base"><a href="requests_cache/session.html#CachedSession">requests_cache.session.CachedSession</a></span>):
+    <span class="name">CachedSession</span><wbr>(<span class="base"><a href="requests_cache/session.html#CachedSession">requests_cache.session.CachedSession</a></span>, <span class="base">chromesession.session._ProtocolCachedSession</span>):
 
         
     </div>
@@ -251,6 +254,54 @@ be cached. See :ref:<code>custom-filtering</code> for details.</li>
 </div>
 
 
+                            <div id="CachedSession.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">CachedSession</span><span class="signature pdoc-code condensed">(<span class="param"><span class="o">*</span><span class="n">args</span>, </span><span class="param"><span class="n">maxsize</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>, </span><span class="param"><span class="o">**</span><span class="n">kwargs</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#CachedSession.__init__"></a>
+    
+            <div class="docstring"><p>Initialize the CachedSession.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>maxsize (Optional[int]):</strong>  The maximum size of the LRU cache for
+<code><a href="#CachedSession.create_key">CachedSession.create_key</a></code>. Defaults to 4096.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="CachedSession.create_key" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">create_key</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">url</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#CachedSession.create_key"></a>
+    
+            <div class="docstring"><p>Create and cache key for a given URL.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>url (str):</strong>  The URL for which to generate a cache key.</li>
+</ul>
+
+<h6 id="returns">Returns:</h6>
+
+<blockquote>
+  <p>str: The cached cache key.</p>
+</blockquote>
+</div>
+
+
+                            </div>
                             <div id="CachedSession.normalize" class="classattr">
                                 <div class="attr function">
                     <div class="decorator decorator-staticmethod">@staticmethod</div>
@@ -274,34 +325,6 @@ be cached. See :ref:<code>custom-filtering</code> for details.</li>
 
 <blockquote>
   <p>str: The normalized URL.</p>
-</blockquote>
-</div>
-
-
-                            </div>
-                            <div id="CachedSession.create_key" class="classattr">
-                                <div class="attr function">
-                    <div class="decorator decorator-functools.lru_cache">@functools.lru_cache(maxsize=4096)</div>
-
-        <span class="def">def</span>
-        <span class="name">create_key</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">url</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#CachedSession.create_key"></a>
-    
-            <div class="docstring"><p>Create a cache key for a given URL.</p>
-
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>url (str):</strong>  The URL for which to generate a cache key.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>str: The created cache key.</p>
 </blockquote>
 </div>
 
@@ -497,8 +520,7 @@ WebDriver instance to cache.</li>
                                 <h5>Inherited Members</h5>
                                 <dl>
                                     <div><dt><a href="requests_cache/session.html#CacheMixin">requests_cache.session.CacheMixin</a></dt>
-                                <dd id="CachedSession.__init__" class="function"><a href="requests_cache/session.html#CacheMixin.__init__">CacheMixin</a></dd>
-                <dd id="CachedSession.cache" class="variable"><a href="requests_cache/session.html#CacheMixin.cache">cache</a></dd>
+                                <dd id="CachedSession.cache" class="variable"><a href="requests_cache/session.html#CacheMixin.cache">cache</a></dd>
                 <dd id="CachedSession.settings" class="variable"><a href="requests_cache/session.html#CacheMixin.settings">settings</a></dd>
                 <dd id="CachedSession.wrap" class="function"><a href="requests_cache/session.html#CacheMixin.wrap">wrap</a></dd>
                 <dd id="CachedSession.expire_after" class="variable"><a href="requests_cache/session.html#CacheMixin.expire_after">expire_after</a></dd>
