@@ -68,6 +68,4 @@ addopts = [
 omit = [ "*/tests/*", "*/docs/*" ]
 
 [tool.coverage.report]
-exclude_lines = [
-  "except ModuleNotFoundError",
-]
+exclude_lines = [ "except ModuleNotFoundError", "pass" ]

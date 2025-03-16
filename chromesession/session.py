@@ -1,5 +1,5 @@
 import functools
-from typing import Callable, Optional, Union
+from typing import Callable, Optional, Protocol, Union
 
 import requests
 import requests_cache
@@ -9,13 +9,8 @@ from url_normalize import url_normalize  # type: ignore[import]
 from .chromium import Chrome
 
 
-class CachedSession(requests_cache.CachedSession):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.create_key: Callable[[str], str] = functools.lru_cache(maxsize=4096)(
-            self.uncached_create_key
-        )
+class _ProtocolCachedSession(Protocol):
+    def create_key(self, url: str) -> str:
         """Create and cache key for a given URL.
 
         Args:
@@ -24,6 +19,30 @@ class CachedSession(requests_cache.CachedSession):
         Returns:
             str: The cached cache key.
         """
+        pass
+
+
+class CachedSession(requests_cache.CachedSession, _ProtocolCachedSession):
+
+    def __init__(
+        self,
+        *args,
+        maxsize: Optional[int] = None,
+        **kwargs,
+    ):
+        """
+        Initialize the CachedSession.
+
+        Args:
+            maxsize (Optional[int]): The maximum size of the LRU cache for
+                `CachedSession.create_key`. Defaults to 4096.
+        """
+        super().__init__(*args, **kwargs)
+        self.create_key: Callable[[str], str] = functools.lru_cache(
+            maxsize=maxsize or 4096
+        )(
+            self._create_key
+        )  # type: ignore[assignment]
 
     def __contains__(self, url: str) -> bool:
         """Determine if a URL is present in the cache.
@@ -48,7 +67,7 @@ class CachedSession(requests_cache.CachedSession):
         """
         return url_normalize(url)
 
-    def uncached_create_key(self, url: str) -> str:
+    def _create_key(self, url: str) -> str:
         """Create a cache key for a given URL.
 
         Args:
