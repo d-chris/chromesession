@@ -15,9 +15,9 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install poetry
@@ -44,9 +44,9 @@ jobs:
         python-version: ["3.13"]
         poetry-extras: ["bs4", ""]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install poetry
@@ -81,7 +81,7 @@ jobs:
     needs: [test, extra]
     steps:
       - name: Restore all Coverage Reports
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
       - name: Upload Coverage Report
         uses: codecov/codecov-action@v5
         with:
