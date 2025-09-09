@@ -27,11 +27,11 @@ documentation = "https://d-chris.github.io/chromesession"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-requests-cache = "^1.2.1"
-responses = "^0.25.7"
-selenium = "^4.29.0"
-chromedriver-py = { version = "^134.0.6998.88", optional = true }
-beautifulsoup4 = { version = "^4.13.3", optional = true }
+requests-cache = ">=1.2.1"
+responses = ">=0.25.7"
+selenium = ">=4.29.0"
+chromedriver-py = { version = ">=134.0.6998.88", optional = true }
+beautifulsoup4 = { version = ">=4.13.3", optional = true }
 
 [tool.poetry.extras]
 driver = [ "chromedriver-py" ]
