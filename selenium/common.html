@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 15.0.1"/>
+    <meta name="generator" content="pdoc 15.0.4"/>
     <title>selenium.common API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
     <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#49483e}.pdoc-code{background:#272822; color:#f8f8f2}.pdoc-code .c{color:#75715e}.pdoc-code .err{color:#960050; background-color:#1e0010}.pdoc-code .esc{color:#f8f8f2}.pdoc-code .g{color:#f8f8f2}.pdoc-code .k{color:#66d9ef}.pdoc-code .l{color:#ae81ff}.pdoc-code .n{color:#f8f8f2}.pdoc-code .o{color:#f92672}.pdoc-code .x{color:#f8f8f2}.pdoc-code .p{color:#f8f8f2}.pdoc-code .ch{color:#75715e}.pdoc-code .cm{color:#75715e}.pdoc-code .cp{color:#75715e}.pdoc-code .cpf{color:#75715e}.pdoc-code .c1{color:#75715e}.pdoc-code .cs{color:#75715e}.pdoc-code .gd{color:#f92672}.pdoc-code .ge{color:#f8f8f2; font-style:italic}.pdoc-code .gr{color:#f8f8f2}.pdoc-code .gh{color:#f8f8f2}.pdoc-code .gi{color:#a6e22e}.pdoc-code .go{color:#66d9ef}.pdoc-code .gp{color:#f92672; font-weight:bold}.pdoc-code .gs{color:#f8f8f2; font-weight:bold}.pdoc-code .gu{color:#75715e}.pdoc-code .gt{color:#f8f8f2}.pdoc-code .kc{color:#66d9ef}.pdoc-code .kd{color:#66d9ef}.pdoc-code .kn{color:#f92672}.pdoc-code .kp{color:#66d9ef}.pdoc-code .kr{color:#66d9ef}.pdoc-code .kt{color:#66d9ef}.pdoc-code .ld{color:#e6db74}.pdoc-code .m{color:#ae81ff}.pdoc-code .s{color:#e6db74}.pdoc-code .na{color:#a6e22e}.pdoc-code .nb{color:#f8f8f2}.pdoc-code .nc{color:#a6e22e}.pdoc-code .no{color:#66d9ef}.pdoc-code .nd{color:#a6e22e}.pdoc-code .ni{color:#f8f8f2}.pdoc-code .ne{color:#a6e22e}.pdoc-code .nf{color:#a6e22e}.pdoc-code .nl{color:#f8f8f2}.pdoc-code .nn{color:#f8f8f2}.pdoc-code .nx{color:#a6e22e}.pdoc-code .py{color:#f8f8f2}.pdoc-code .nt{color:#f92672}.pdoc-code .nv{color:#f8f8f2}.pdoc-code .ow{color:#f92672}.pdoc-code .w{color:#f8f8f2}.pdoc-code .mb{color:#ae81ff}.pdoc-code .mf{color:#ae81ff}.pdoc-code .mh{color:#ae81ff}.pdoc-code .mi{color:#ae81ff}.pdoc-code .mo{color:#ae81ff}.pdoc-code .sa{color:#e6db74}.pdoc-code .sb{color:#e6db74}.pdoc-code .sc{color:#e6db74}.pdoc-code .dl{color:#e6db74}.pdoc-code .sd{color:#e6db74}.pdoc-code .s2{color:#e6db74}.pdoc-code .se{color:#ae81ff}.pdoc-code .sh{color:#e6db74}.pdoc-code .si{color:#e6db74}.pdoc-code .sx{color:#e6db74}.pdoc-code .sr{color:#e6db74}.pdoc-code .s1{color:#e6db74}.pdoc-code .ss{color:#e6db74}.pdoc-code .bp{color:#f8f8f2}.pdoc-code .fm{color:#a6e22e}.pdoc-code .vc{color:#f8f8f2}.pdoc-code .vg{color:#f8f8f2}.pdoc-code .vi{color:#f8f8f2}.pdoc-code .vm{color:#f8f8f2}</style>
     <style>/*! theme.css */:root{--pdoc-background:#212529;}.pdoc{--text:#f7f7f7;--muted:#9d9d9d;--link:#58a6ff;--link-hover:#3989ff;--code:#333;--active:#555;--accent:#343434;--accent2:#555;--nav-hover:rgba(0, 0, 0, 0.1);--name:#77C1FF;--def:#0cdd0c;--annotation:#00c037;}</style>
     <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
-    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note {color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:35px;vertical-align:middle;width:70px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:35px;vertical-align:middle;width:70px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
     <style>/*! custom.css */</style></head>
 <body>
     <nav class="pdoc">
@@ -25,19 +25,100 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="class" href="#WebDriverException">WebDriverException</a>
+                    <a class="class" href="#DetachedShadowRootException">DetachedShadowRootException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ElementClickInterceptedException">ElementClickInterceptedException</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#WebDriverException.__init__">WebDriverException</a>
+                                <a class="function" href="#ElementClickInterceptedException.__init__">ElementClickInterceptedException</a>
                         </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ElementNotInteractableException">ElementNotInteractableException</a>
+                            <ul class="memberlist">
                         <li>
-                                <a class="variable" href="#WebDriverException.msg">msg</a>
+                                <a class="function" href="#ElementNotInteractableException.__init__">ElementNotInteractableException</a>
                         </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ElementNotSelectableException">ElementNotSelectableException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ElementNotVisibleException">ElementNotVisibleException</a>
+                            <ul class="memberlist">
                         <li>
-                                <a class="variable" href="#WebDriverException.screen">screen</a>
+                                <a class="function" href="#ElementNotVisibleException.__init__">ElementNotVisibleException</a>
                         </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ImeActivationFailedException">ImeActivationFailedException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ImeNotAvailableException">ImeNotAvailableException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InsecureCertificateException">InsecureCertificateException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidArgumentException">InvalidArgumentException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidCookieDomainException">InvalidCookieDomainException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidCoordinatesException">InvalidCoordinatesException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidElementStateException">InvalidElementStateException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidSelectorException">InvalidSelectorException</a>
+                            <ul class="memberlist">
                         <li>
-                                <a class="variable" href="#WebDriverException.stacktrace">stacktrace</a>
+                                <a class="function" href="#InvalidSelectorException.__init__">InvalidSelectorException</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#InvalidSessionIdException">InvalidSessionIdException</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#InvalidSessionIdException.__init__">InvalidSessionIdException</a>
                         </li>
                 </ul>
 
@@ -49,28 +130,31 @@
 
             </li>
             <li>
-                    <a class="class" href="#NoSuchFrameException">NoSuchFrameException</a>
+                    <a class="class" href="#JavascriptException">JavascriptException</a>
                             <ul class="memberlist">
                 </ul>
 
             </li>
             <li>
-                    <a class="class" href="#NoSuchWindowException">NoSuchWindowException</a>
+                    <a class="class" href="#MoveTargetOutOfBoundsException">MoveTargetOutOfBoundsException</a>
                             <ul class="memberlist">
                 </ul>
 
             </li>
             <li>
-                    <a class="class" href="#NoSuchElementException">NoSuchElementException</a>
+                    <a class="class" href="#NoAlertPresentException">NoAlertPresentException</a>
                             <ul class="memberlist">
-                        <li>
-                                <a class="function" href="#NoSuchElementException.__init__">NoSuchElementException</a>
-                        </li>
                 </ul>
 
             </li>
             <li>
                     <a class="class" href="#NoSuchAttributeException">NoSuchAttributeException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#NoSuchCookieException">NoSuchCookieException</a>
                             <ul class="memberlist">
                 </ul>
 
@@ -85,8 +169,44 @@
 
             </li>
             <li>
+                    <a class="class" href="#NoSuchElementException">NoSuchElementException</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#NoSuchElementException.__init__">NoSuchElementException</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#NoSuchFrameException">NoSuchFrameException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
                     <a class="class" href="#NoSuchShadowRootException">NoSuchShadowRootException</a>
                             <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#NoSuchWindowException">NoSuchWindowException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ScreenshotException">ScreenshotException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#SessionNotCreatedException">SessionNotCreatedException</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#SessionNotCreatedException.__init__">SessionNotCreatedException</a>
+                        </li>
                 </ul>
 
             </li>
@@ -100,7 +220,13 @@
 
             </li>
             <li>
-                    <a class="class" href="#InvalidElementStateException">InvalidElementStateException</a>
+                    <a class="class" href="#TimeoutException">TimeoutException</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#UnableToSetCookieException">UnableToSetCookieException</a>
                             <ul class="memberlist">
                 </ul>
 
@@ -118,130 +244,7 @@
 
             </li>
             <li>
-                    <a class="class" href="#NoAlertPresentException">NoAlertPresentException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ElementNotVisibleException">ElementNotVisibleException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ElementNotInteractableException">ElementNotInteractableException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ElementNotSelectableException">ElementNotSelectableException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InvalidCookieDomainException">InvalidCookieDomainException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#UnableToSetCookieException">UnableToSetCookieException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#TimeoutException">TimeoutException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#MoveTargetOutOfBoundsException">MoveTargetOutOfBoundsException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
                     <a class="class" href="#UnexpectedTagNameException">UnexpectedTagNameException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InvalidSelectorException">InvalidSelectorException</a>
-                            <ul class="memberlist">
-                        <li>
-                                <a class="function" href="#InvalidSelectorException.__init__">InvalidSelectorException</a>
-                        </li>
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ImeNotAvailableException">ImeNotAvailableException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ImeActivationFailedException">ImeActivationFailedException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InvalidArgumentException">InvalidArgumentException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#JavascriptException">JavascriptException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#NoSuchCookieException">NoSuchCookieException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ScreenshotException">ScreenshotException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#ElementClickInterceptedException">ElementClickInterceptedException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InsecureCertificateException">InsecureCertificateException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InvalidCoordinatesException">InvalidCoordinatesException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#InvalidSessionIdException">InvalidSessionIdException</a>
-                            <ul class="memberlist">
-                </ul>
-
-            </li>
-            <li>
-                    <a class="class" href="#SessionNotCreatedException">SessionNotCreatedException</a>
                             <ul class="memberlist">
                 </ul>
 
@@ -253,8 +256,20 @@
 
             </li>
             <li>
-                    <a class="class" href="#DetachedShadowRootException">DetachedShadowRootException</a>
+                    <a class="class" href="#WebDriverException">WebDriverException</a>
                             <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#WebDriverException.__init__">WebDriverException</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WebDriverException.msg">msg</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WebDriverException.screen">screen</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WebDriverException.stacktrace">stacktrace</a>
+                        </li>
                 </ul>
 
             </li>
@@ -279,6 +294,695 @@
                 
                 
             </section>
+                <section id="DetachedShadowRootException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">DetachedShadowRootException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#DetachedShadowRootException"></a>
+    
+            <div class="docstring"><p>Raised when referenced shadow root is no longer attached to the DOM.</p>
+</div>
+
+
+                </section>
+                <section id="ElementClickInterceptedException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ElementClickInterceptedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ElementClickInterceptedException"></a>
+    
+            <div class="docstring"><p>The Element Click command could not be completed because the element
+receiving the events is obscuring the element that was requested to be
+clicked.</p>
+</div>
+
+
+                            <div id="ElementClickInterceptedException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">ElementClickInterceptedException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ElementClickInterceptedException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="ElementNotInteractableException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ElementNotInteractableException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ElementNotInteractableException"></a>
+    
+            <div class="docstring"><p>Thrown when an element is present in the DOM but interactions with that
+element will hit another element due to paint order.</p>
+</div>
+
+
+                            <div id="ElementNotInteractableException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">ElementNotInteractableException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ElementNotInteractableException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="ElementNotSelectableException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ElementNotSelectableException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ElementNotSelectableException"></a>
+    
+            <div class="docstring"><p>Thrown when trying to select an unselectable element.</p>
+
+<p>For example, selecting a 'script' element.</p>
+</div>
+
+
+                </section>
+                <section id="ElementNotVisibleException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ElementNotVisibleException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ElementNotVisibleException"></a>
+    
+            <div class="docstring"><p>Thrown when an element is present on the DOM, but it is not visible, and
+so is not able to be interacted with.</p>
+
+<p>Most commonly encountered when trying to click or read text of an
+element that is hidden from view.</p>
+</div>
+
+
+                            <div id="ElementNotVisibleException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">ElementNotVisibleException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ElementNotVisibleException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="ImeActivationFailedException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ImeActivationFailedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ImeActivationFailedException"></a>
+    
+            <div class="docstring"><p>Thrown when activating an IME engine has failed.</p>
+</div>
+
+
+                </section>
+                <section id="ImeNotAvailableException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ImeNotAvailableException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ImeNotAvailableException"></a>
+    
+            <div class="docstring"><p>Thrown when IME support is not available.</p>
+
+<p>This exception is thrown for every IME-related method call if IME
+support is not available on the machine.</p>
+</div>
+
+
+                </section>
+                <section id="InsecureCertificateException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InsecureCertificateException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InsecureCertificateException"></a>
+    
+            <div class="docstring"><p>Navigation caused the user agent to hit a certificate warning, which is
+usually the result of an expired or invalid TLS certificate.</p>
+</div>
+
+
+                </section>
+                <section id="InvalidArgumentException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidArgumentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidArgumentException"></a>
+    
+            <div class="docstring"><p>The arguments passed to a command are either invalid or malformed.</p>
+</div>
+
+
+                </section>
+                <section id="InvalidCookieDomainException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidCookieDomainException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidCookieDomainException"></a>
+    
+            <div class="docstring"><p>Thrown when attempting to add a cookie under a different domain than the
+current URL.</p>
+</div>
+
+
+                </section>
+                <section id="InvalidCoordinatesException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidCoordinatesException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidCoordinatesException"></a>
+    
+            <div class="docstring"><p>The coordinates provided to an interaction's operation are invalid.</p>
+</div>
+
+
+                </section>
+                <section id="InvalidElementStateException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidElementStateException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidElementStateException"></a>
+    
+            <div class="docstring"><p>Thrown when a command could not be completed because the element is in
+an invalid state.</p>
+
+<p>This can be caused by attempting to clear an element that isn't both
+editable and resettable.</p>
+</div>
+
+
+                </section>
+                <section id="InvalidSelectorException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidSelectorException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidSelectorException"></a>
+    
+            <div class="docstring"><p>Thrown when the selector which is used to find an element does not
+return a WebElement.</p>
+
+<p>Currently this only happens when the selector is an xpath expression
+and it is either syntactically invalid (i.e. it is not a xpath
+expression) or the expression does not select WebElements (e.g.
+"count(//input)").</p>
+</div>
+
+
+                            <div id="InvalidSelectorException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">InvalidSelectorException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidSelectorException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="InvalidSessionIdException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidSessionIdException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidSessionIdException"></a>
+    
+            <div class="docstring"><p>Occurs if the given session id is not in the list of active sessions,
+meaning the session either does not exist or that it's not active.</p>
+</div>
+
+
+                            <div id="InvalidSessionIdException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">InvalidSessionIdException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidSessionIdException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="InvalidSwitchToTargetException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">InvalidSwitchToTargetException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#InvalidSwitchToTargetException"></a>
+    
+            <div class="docstring"><p>Thrown when frame or window target to be switched doesn't exist.</p>
+</div>
+
+
+                </section>
+                <section id="JavascriptException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">JavascriptException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#JavascriptException"></a>
+    
+            <div class="docstring"><p>An error occurred while executing JavaScript supplied by the user.</p>
+</div>
+
+
+                </section>
+                <section id="MoveTargetOutOfBoundsException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">MoveTargetOutOfBoundsException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#MoveTargetOutOfBoundsException"></a>
+    
+            <div class="docstring"><p>Thrown when the target provided to the <code>ActionsChains</code> move() method is
+invalid, i.e. out of document.</p>
+</div>
+
+
+                </section>
+                <section id="NoAlertPresentException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoAlertPresentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoAlertPresentException"></a>
+    
+            <div class="docstring"><p>Thrown when switching to no presented alert.</p>
+
+<p>This can be caused by calling an operation on the Alert() class when
+an alert is not yet on the screen.</p>
+</div>
+
+
+                </section>
+                <section id="NoSuchAttributeException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchAttributeException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchAttributeException"></a>
+    
+            <div class="docstring"><p>Thrown when the attribute of element could not be found.</p>
+
+<p>You may want to check if the attribute exists in the particular
+browser you are testing against.  Some browsers may have different
+property names for the same property.  (IE8's .innerText vs. Firefox
+.textContent)</p>
+</div>
+
+
+                </section>
+                <section id="NoSuchCookieException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchCookieException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchCookieException"></a>
+    
+            <div class="docstring"><p>No cookie matching the given path name was found amongst the associated
+cookies of the current browsing context's active document.</p>
+</div>
+
+
+                </section>
+                <section id="NoSuchDriverException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchDriverException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchDriverException"></a>
+    
+            <div class="docstring"><p>Raised when driver is not specified and cannot be located.</p>
+</div>
+
+
+                            <div id="NoSuchDriverException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">NoSuchDriverException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchDriverException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="NoSuchElementException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchElementException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchElementException"></a>
+    
+            <div class="docstring"><p>Thrown when element could not be found.</p>
+
+<p>If you encounter this exception, you may want to check the following:
+    * Check your selector used in your find_by...
+    * Element may not yet be on the screen at the time of the find operation,
+      (webpage is still loading) see selenium.webdriver.support.wait.WebDriverWait()
+      for how to write a wait wrapper to wait for an element to appear.</p>
+</div>
+
+
+                            <div id="NoSuchElementException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">NoSuchElementException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchElementException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="NoSuchFrameException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchFrameException</span><wbr>(<span class="base"><a href="#InvalidSwitchToTargetException">selenium.common.InvalidSwitchToTargetException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchFrameException"></a>
+    
+            <div class="docstring"><p>Thrown when frame target to be switched doesn't exist.</p>
+</div>
+
+
+                </section>
+                <section id="NoSuchShadowRootException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchShadowRootException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchShadowRootException"></a>
+    
+            <div class="docstring"><p>Thrown when trying to access the shadow root of an element when it does
+not have a shadow root attached.</p>
+</div>
+
+
+                </section>
+                <section id="NoSuchWindowException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">NoSuchWindowException</span><wbr>(<span class="base"><a href="#InvalidSwitchToTargetException">selenium.common.InvalidSwitchToTargetException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#NoSuchWindowException"></a>
+    
+            <div class="docstring"><p>Thrown when window target to be switched doesn't exist.</p>
+
+<p>To find the current set of active window handles, you can get a list
+of the active window handles in the following way::</p>
+
+<pre><code>print driver.window_handles
+</code></pre>
+</div>
+
+
+                </section>
+                <section id="ScreenshotException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ScreenshotException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#ScreenshotException"></a>
+    
+            <div class="docstring"><p>A screen capture was made impossible.</p>
+</div>
+
+
+                </section>
+                <section id="SessionNotCreatedException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">SessionNotCreatedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#SessionNotCreatedException"></a>
+    
+            <div class="docstring"><p>A new session could not be created.</p>
+</div>
+
+
+                            <div id="SessionNotCreatedException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">SessionNotCreatedException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#SessionNotCreatedException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="StaleElementReferenceException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">StaleElementReferenceException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#StaleElementReferenceException"></a>
+    
+            <div class="docstring"><p>Thrown when a reference to an element is now "stale".</p>
+
+<p>Stale means the element no longer appears on the DOM of the page.</p>
+
+<p>Possible causes of StaleElementReferenceException include, but not limited to:
+    * You are no longer on the same page, or the page may have refreshed since the element
+      was located.
+    * The element may have been removed and re-added to the screen, since it was located.
+      Such as an element being relocated.
+      This can happen typically with a javascript framework when values are updated and the
+      node is rebuilt.
+    * Element may have been inside an iframe or another context which was refreshed.</p>
+</div>
+
+
+                            <div id="StaleElementReferenceException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">StaleElementReferenceException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#StaleElementReferenceException.__init__"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="TimeoutException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">TimeoutException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#TimeoutException"></a>
+    
+            <div class="docstring"><p>Thrown when a command does not complete in enough time.</p>
+</div>
+
+
+                </section>
+                <section id="UnableToSetCookieException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">UnableToSetCookieException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#UnableToSetCookieException"></a>
+    
+            <div class="docstring"><p>Thrown when a driver fails to set a cookie.</p>
+</div>
+
+
+                </section>
+                <section id="UnexpectedAlertPresentException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">UnexpectedAlertPresentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#UnexpectedAlertPresentException"></a>
+    
+            <div class="docstring"><p>Thrown when an unexpected alert has appeared.</p>
+
+<p>Usually raised when  an unexpected modal is blocking the webdriver
+from executing commands.</p>
+</div>
+
+
+                            <div id="UnexpectedAlertPresentException.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">UnexpectedAlertPresentException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">alert_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#UnexpectedAlertPresentException.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="UnexpectedAlertPresentException.alert_text" class="classattr">
+                                <div class="attr variable">
+            <span class="name">alert_text</span>
+
+        
+    </div>
+    <a class="headerlink" href="#UnexpectedAlertPresentException.alert_text"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="UnexpectedTagNameException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">UnexpectedTagNameException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#UnexpectedTagNameException"></a>
+    
+            <div class="docstring"><p>Thrown when a support class did not get an expected web element.</p>
+</div>
+
+
+                </section>
+                <section id="UnknownMethodException">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">UnknownMethodException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
+
+        
+    </div>
+    <a class="headerlink" href="#UnknownMethodException"></a>
+    
+            <div class="docstring"><p>The requested command matched a known URL but did not match any methods
+for that URL.</p>
+</div>
+
+
+                </section>
                 <section id="WebDriverException">
                     <div class="attr class">
             
@@ -338,635 +1042,6 @@
     
 
                             </div>
-                </section>
-                <section id="InvalidSwitchToTargetException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidSwitchToTargetException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidSwitchToTargetException"></a>
-    
-            <div class="docstring"><p>Thrown when frame or window target to be switched doesn't exist.</p>
-</div>
-
-
-                </section>
-                <section id="NoSuchFrameException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchFrameException</span><wbr>(<span class="base"><a href="#InvalidSwitchToTargetException">selenium.common.InvalidSwitchToTargetException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchFrameException"></a>
-    
-            <div class="docstring"><p>Thrown when frame target to be switched doesn't exist.</p>
-</div>
-
-
-                </section>
-                <section id="NoSuchWindowException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchWindowException</span><wbr>(<span class="base"><a href="#InvalidSwitchToTargetException">selenium.common.InvalidSwitchToTargetException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchWindowException"></a>
-    
-            <div class="docstring"><p>Thrown when window target to be switched doesn't exist.</p>
-
-<p>To find the current set of active window handles, you can get a list
-of the active window handles in the following way::</p>
-
-<pre><code>print driver.window_handles
-</code></pre>
-</div>
-
-
-                </section>
-                <section id="NoSuchElementException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchElementException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchElementException"></a>
-    
-            <div class="docstring"><p>Thrown when element could not be found.</p>
-
-<p>If you encounter this exception, you may want to check the following:
-    * Check your selector used in your find_by...
-    * Element may not yet be on the screen at the time of the find operation,
-      (webpage is still loading) see selenium.webdriver.support.wait.WebDriverWait()
-      for how to write a wait wrapper to wait for an element to appear.</p>
-</div>
-
-
-                            <div id="NoSuchElementException.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">NoSuchElementException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchElementException.__init__"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="NoSuchAttributeException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchAttributeException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchAttributeException"></a>
-    
-            <div class="docstring"><p>Thrown when the attribute of element could not be found.</p>
-
-<p>You may want to check if the attribute exists in the particular
-browser you are testing against.  Some browsers may have different
-property names for the same property.  (IE8's .innerText vs. Firefox
-.textContent)</p>
-</div>
-
-
-                </section>
-                <section id="NoSuchDriverException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchDriverException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchDriverException"></a>
-    
-            <div class="docstring"><p>Raised when driver is not specified and cannot be located.</p>
-</div>
-
-
-                            <div id="NoSuchDriverException.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">NoSuchDriverException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchDriverException.__init__"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="NoSuchShadowRootException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchShadowRootException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchShadowRootException"></a>
-    
-            <div class="docstring"><p>Thrown when trying to access the shadow root of an element when it does
-not have a shadow root attached.</p>
-</div>
-
-
-                </section>
-                <section id="StaleElementReferenceException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">StaleElementReferenceException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#StaleElementReferenceException"></a>
-    
-            <div class="docstring"><p>Thrown when a reference to an element is now "stale".</p>
-
-<p>Stale means the element no longer appears on the DOM of the page.</p>
-
-<p>Possible causes of StaleElementReferenceException include, but not limited to:
-    * You are no longer on the same page, or the page may have refreshed since the element
-      was located.
-    * The element may have been removed and re-added to the screen, since it was located.
-      Such as an element being relocated.
-      This can happen typically with a javascript framework when values are updated and the
-      node is rebuilt.
-    * Element may have been inside an iframe or another context which was refreshed.</p>
-</div>
-
-
-                            <div id="StaleElementReferenceException.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">StaleElementReferenceException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#StaleElementReferenceException.__init__"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="InvalidElementStateException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidElementStateException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidElementStateException"></a>
-    
-            <div class="docstring"><p>Thrown when a command could not be completed because the element is in
-an invalid state.</p>
-
-<p>This can be caused by attempting to clear an element that isn't both
-editable and resettable.</p>
-</div>
-
-
-                </section>
-                <section id="UnexpectedAlertPresentException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">UnexpectedAlertPresentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#UnexpectedAlertPresentException"></a>
-    
-            <div class="docstring"><p>Thrown when an unexpected alert has appeared.</p>
-
-<p>Usually raised when  an unexpected modal is blocking the webdriver
-from executing commands.</p>
-</div>
-
-
-                            <div id="UnexpectedAlertPresentException.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">UnexpectedAlertPresentException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">alert_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#UnexpectedAlertPresentException.__init__"></a>
-    
-    
-
-                            </div>
-                            <div id="UnexpectedAlertPresentException.alert_text" class="classattr">
-                                <div class="attr variable">
-            <span class="name">alert_text</span>
-
-        
-    </div>
-    <a class="headerlink" href="#UnexpectedAlertPresentException.alert_text"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="NoAlertPresentException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoAlertPresentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoAlertPresentException"></a>
-    
-            <div class="docstring"><p>Thrown when switching to no presented alert.</p>
-
-<p>This can be caused by calling an operation on the Alert() class when
-an alert is not yet on the screen.</p>
-</div>
-
-
-                </section>
-                <section id="ElementNotVisibleException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ElementNotVisibleException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ElementNotVisibleException"></a>
-    
-            <div class="docstring"><p>Thrown when an element is present on the DOM, but it is not visible, and
-so is not able to be interacted with.</p>
-
-<p>Most commonly encountered when trying to click or read text of an
-element that is hidden from view.</p>
-</div>
-
-
-                </section>
-                <section id="ElementNotInteractableException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ElementNotInteractableException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ElementNotInteractableException"></a>
-    
-            <div class="docstring"><p>Thrown when an element is present in the DOM but interactions with that
-element will hit another element due to paint order.</p>
-</div>
-
-
-                </section>
-                <section id="ElementNotSelectableException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ElementNotSelectableException</span><wbr>(<span class="base"><a href="#InvalidElementStateException">selenium.common.InvalidElementStateException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ElementNotSelectableException"></a>
-    
-            <div class="docstring"><p>Thrown when trying to select an unselectable element.</p>
-
-<p>For example, selecting a 'script' element.</p>
-</div>
-
-
-                </section>
-                <section id="InvalidCookieDomainException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidCookieDomainException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidCookieDomainException"></a>
-    
-            <div class="docstring"><p>Thrown when attempting to add a cookie under a different domain than the
-current URL.</p>
-</div>
-
-
-                </section>
-                <section id="UnableToSetCookieException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">UnableToSetCookieException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#UnableToSetCookieException"></a>
-    
-            <div class="docstring"><p>Thrown when a driver fails to set a cookie.</p>
-</div>
-
-
-                </section>
-                <section id="TimeoutException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">TimeoutException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#TimeoutException"></a>
-    
-            <div class="docstring"><p>Thrown when a command does not complete in enough time.</p>
-</div>
-
-
-                </section>
-                <section id="MoveTargetOutOfBoundsException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">MoveTargetOutOfBoundsException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#MoveTargetOutOfBoundsException"></a>
-    
-            <div class="docstring"><p>Thrown when the target provided to the <code>ActionsChains</code> move() method is
-invalid, i.e. out of document.</p>
-</div>
-
-
-                </section>
-                <section id="UnexpectedTagNameException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">UnexpectedTagNameException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#UnexpectedTagNameException"></a>
-    
-            <div class="docstring"><p>Thrown when a support class did not get an expected web element.</p>
-</div>
-
-
-                </section>
-                <section id="InvalidSelectorException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidSelectorException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidSelectorException"></a>
-    
-            <div class="docstring"><p>Thrown when the selector which is used to find an element does not
-return a WebElement.</p>
-
-<p>Currently this only happens when the selector is an xpath expression
-and it is either syntactically invalid (i.e. it is not a xpath
-expression) or the expression does not select WebElements (e.g.
-"count(//input)").</p>
-</div>
-
-
-                            <div id="InvalidSelectorException.__init__" class="classattr">
-                                <div class="attr function">
-            
-        <span class="name">InvalidSelectorException</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">msg</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">screen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stacktrace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidSelectorException.__init__"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="ImeNotAvailableException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ImeNotAvailableException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ImeNotAvailableException"></a>
-    
-            <div class="docstring"><p>Thrown when IME support is not available.</p>
-
-<p>This exception is thrown for every IME-related method call if IME
-support is not available on the machine.</p>
-</div>
-
-
-                </section>
-                <section id="ImeActivationFailedException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ImeActivationFailedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ImeActivationFailedException"></a>
-    
-            <div class="docstring"><p>Thrown when activating an IME engine has failed.</p>
-</div>
-
-
-                </section>
-                <section id="InvalidArgumentException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidArgumentException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidArgumentException"></a>
-    
-            <div class="docstring"><p>The arguments passed to a command are either invalid or malformed.</p>
-</div>
-
-
-                </section>
-                <section id="JavascriptException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">JavascriptException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#JavascriptException"></a>
-    
-            <div class="docstring"><p>An error occurred while executing JavaScript supplied by the user.</p>
-</div>
-
-
-                </section>
-                <section id="NoSuchCookieException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">NoSuchCookieException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#NoSuchCookieException"></a>
-    
-            <div class="docstring"><p>No cookie matching the given path name was found amongst the associated
-cookies of the current browsing context's active document.</p>
-</div>
-
-
-                </section>
-                <section id="ScreenshotException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ScreenshotException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ScreenshotException"></a>
-    
-            <div class="docstring"><p>A screen capture was made impossible.</p>
-</div>
-
-
-                </section>
-                <section id="ElementClickInterceptedException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ElementClickInterceptedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#ElementClickInterceptedException"></a>
-    
-            <div class="docstring"><p>The Element Click command could not be completed because the element
-receiving the events is obscuring the element that was requested to be
-clicked.</p>
-</div>
-
-
-                </section>
-                <section id="InsecureCertificateException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InsecureCertificateException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InsecureCertificateException"></a>
-    
-            <div class="docstring"><p>Navigation caused the user agent to hit a certificate warning, which is
-usually the result of an expired or invalid TLS certificate.</p>
-</div>
-
-
-                </section>
-                <section id="InvalidCoordinatesException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidCoordinatesException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidCoordinatesException"></a>
-    
-            <div class="docstring"><p>The coordinates provided to an interaction's operation are invalid.</p>
-</div>
-
-
-                </section>
-                <section id="InvalidSessionIdException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">InvalidSessionIdException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#InvalidSessionIdException"></a>
-    
-            <div class="docstring"><p>Occurs if the given session id is not in the list of active sessions,
-meaning the session either does not exist or that it's not active.</p>
-</div>
-
-
-                </section>
-                <section id="SessionNotCreatedException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">SessionNotCreatedException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#SessionNotCreatedException"></a>
-    
-            <div class="docstring"><p>A new session could not be created.</p>
-</div>
-
-
-                </section>
-                <section id="UnknownMethodException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">UnknownMethodException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#UnknownMethodException"></a>
-    
-            <div class="docstring"><p>The requested command matched a known URL but did not match any methods
-for that URL.</p>
-</div>
-
-
-                </section>
-                <section id="DetachedShadowRootException">
-                    <div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">DetachedShadowRootException</span><wbr>(<span class="base"><a href="#WebDriverException">selenium.common.WebDriverException</a></span>):
-
-        
-    </div>
-    <a class="headerlink" href="#DetachedShadowRootException"></a>
-    
-            <div class="docstring"><p>Raised when referenced shadow root is no longer attached to the DOM.</p>
-</div>
-
-
                 </section>
     </main>
 </body>
