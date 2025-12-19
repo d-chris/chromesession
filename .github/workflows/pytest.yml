@@ -70,7 +70,7 @@ jobs:
         run: |
           poetry run pytest
       - name: Save Coverage Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-${{ matrix.poetry-extras }}-${{ matrix.os }}
           path: coverage.xml
